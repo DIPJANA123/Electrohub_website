@@ -1,0 +1,57 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Customer Orders
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'seller/css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h1>📦 Customer Orders</h1>
+
+    {% for order in orders %}
+
+    <div class="seller-card">
+
+        <h3>Product : {{ order.product.name }}</h3>
+
+        <p>Customer : {{ order.user.username }}</p>
+
+        <p>Total : ₹{{ order.total }}</p>
+
+        <form method="POST">
+    {% csrf_token %}
+
+    <input type="hidden" name="order_id" value="{{ order.id }}">
+
+    <label><b>Status :</b></label>
+
+    <select name="status">
+        <option value="Pending">Pending</option>
+        <option value="Confirmed">Confirmed</option>
+        <option value="Shipped">Shipped</option>
+        <option value="Delivered">Delivered</option>
+        <option value="Cancelled">Cancelled</option>
+    </select>
+
+    <button type="submit">Update</button>
+
+</form>
+
+    </div>
+
+    {% empty %}
+
+    <h2>No Orders Yet</h2>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results - ElectroHub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .search-results { padding: 20px; }
+    .product-list { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .card { border: 1px solid #ccc; padding: 10px; border-radius: 8px; width: 180px; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <header>🔍 Search Results</header>
+
+  <section class="search-results">
+    <h2>Results for: <span id="searchQuery"></span></h2>
+    <div class="product-list" id="resultList"></div>
+  </section>
+
+  <nav class="bottom-nav">
+    <button onclick="location.href='index.html'">🏠 Home</button>
+    <button onclick="alert('Seller Section')">🛍 Seller</button>
+    <button onclick="alert('Account Section')">👤 Account</button>
+    <button onclick="alert('View Cart')">🛒 Cart</button>
+  </nav>
+
+
+  <script>
+    // demo products list
+    
+    
+    const products = [
+      { name: "10kΩ Resistor", price: "₹10" },
+      { name: "100μF Capacitor", price: "₹15" },
+      { name: "Push Button Switch", price: "₹50" },
+      { name: "Wire Connector", price: "₹30" },
+      { name: "DC Motor", price: "₹250" },
+      { name: "IR Sensor", price: "₹120" }
+    ];
+
+    // get query from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get("q").toLowerCase();
+    document.getElementById("searchQuery").innerText = query;
+
+    // filter products
+    const resultList = document.getElementById("resultList");
+    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+
+    if (filtered.length > 0) {
+      filtered.forEach(p => {
+        let card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<h3>${p.name}</h3><p>${p.price}</p>`;
+        resultList.appendChild(card);
+      });
+    } else {
+      resultList.innerHTML = "<p>No products found.</p>";
+    }
+  </script>
+
+</body>
+</html>

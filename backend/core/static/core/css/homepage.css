@@ -1,0 +1,68 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background: #1fa7d0; color: #111; }
+header { background: #fff; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; font-size: 1.5rem; font-weight: bold; color: #72ec3d; }
+
+.categories { 
+  display: flex; 
+  gap: 1rem; 
+  padding: 1rem; 
+  overflow-x: auto;       
+  white-space: nowrap;    
+  scrollbar-width: thin;  
+}
+.category { 
+  flex: 0 0 auto;         
+  background: #e5e7eb; 
+  padding: 0.5rem 1rem; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: 0.2s; 
+}
+.category:hover { background: #d6e813; color: rgb(192, 20, 195); }
+
+.search { text-align: center; padding: 1rem; }
+.search input { width: 80%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 8px; }
+.search button { padding: 0.7rem 1rem; margin-left: 0.5rem; border: none; border-radius: 8px; background: #0B6AF5; color: white; cursor: pointer; }
+
+/* Offers section fixed at its position */
+.offers { 
+  padding: 1rem; 
+  position: sticky; 
+  top: 0; 
+  background: #f9fafb; 
+  z-index: 10; 
+}
+.offers h2 { margin-bottom: 0.5rem; }
+.offer-list { display: flex; gap: 1rem; overflow-x: auto; white-space: nowrap; scrollbar-width: thin; }
+
+.products { padding: 1rem; }
+.products h2 { margin-bottom: 0.5rem; }
+
+/* Grid layout for products */
+.product-list { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  gap: 1rem; 
+}
+
+.card { background: #fff; padding: 1rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.card img { max-width: 100%; height: 100px; object-fit: cover; border-radius: 6px; }
+.card h3 { font-size: 0.9rem; margin: 0.5rem 0; }
+
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; display: flex; justify-content: space-around; padding: 0.5rem 0; border-top: 1px solid #ddd; }
+.bottom-nav button { background: none; border: none; font-size: 0.9rem; display: flex; flex-direction: column; align-items: center; color: #333; cursor: pointer; }
+.bottom-nav button:hover { color: #0B6AF5; }
+
+a { text-decoration: none; color: inherit; }
+
+.auth-buttons {
+  float: right;
+  margin-right: 20px;
+}
+
+.auth-buttons a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}

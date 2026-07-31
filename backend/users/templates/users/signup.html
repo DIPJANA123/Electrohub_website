@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup - ElectroHub</title>
+  <style>
+    body{font-family:Arial;background:#f4f6fb;}
+    .box{width:350px;margin:60px auto;background:white;padding:20px;border-radius:10px;box-shadow:0 0 10px #ccc;}
+    h2{text-align:center;color:#0078ff;}
+    input,button{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;}
+    button{background:#0078ff;color:white;font-weight:bold;}
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Create Account</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="phone" placeholder="Phone" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button>Create Account</button>
+  </form>
+  <p align="center">Already have account? <a href="/users/login/">Login</a></p>
+</div>
+
+</body>
+</html> 
+

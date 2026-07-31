@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroHub - Homepage</title>
+
+  <!-- CSS link-->
+  <link rel="stylesheet" href="{% static 'core/css/homepage.css' %}">
+</head>
+
+<body>
+
+  <header>ElectroHub</header>
+
+
+  <div class="auth-buttons">
+  {% if user.is_authenticated %}
+      <span>👤 {{ user.username }}</span>
+      <a href="/users/logout/">Logout</a>
+  {% else %}
+      <a href="/users/login/">Login</a>
+      <a href="/users/signup/">Signup</a>
+  {% endif %}
+</div>
+
+
+  <section class="categories">
+    <a href="all_product.html/cellingfan.html">
+      <div class="category">celling fan</div>
+    </a>
+    <a href="all_product/tube light.html">
+      <div class="category">Tube light</div>
+    </a>
+    <a href="all_product/led.html">
+      <div class="category">led light</div>
+    </a>
+    <a href="all_product/wire.html">
+      <div class="category">wire</div>
+      </a>
+    <a href="all_product/Dj light.html">
+      <div class="category">Dj light</div>
+      </a>
+    <a href="all_product/Tv.html">
+      <div class="category">Tv</div>
+      </a>
+    <a href="all_product/Rice light.html">
+      <div class="category">Rice Light</div>
+      </a>
+    <a href="all_product/Motors.html">
+      <div class="category">Motors</div>
+      </a>
+    <a href="all_product/Home theater.html">
+      <div class="category">Home theater</div>
+    </a>
+  </section>
+  
+
+  <header>🔍 Search Results</header>
+
+<section class="search">
+  <input type="text" id="searchInput" placeholder="Search products...">
+  <button onclick="searchProduct()">🔍</button>
+</section>
+
+<section class="search-results">
+  <div class="product-list" id="resultList"></div>
+</section>
+
+<script>
+  function searchProduct() {
+    const query = document.getElementById('searchInput').value;
+    if(query.trim() !== "") {
+      alert("Searching for: " + query);
+      // You can add code here to show results in #resultList
+    } else {
+      alert("Please enter a product to search.");
+    }
+  }
+
+  // Add Enter key functionality
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent form submission if inside a form
+      searchProduct(); // Call the search function
+    }
+  });
+</script>
+
+
+  <nav class="bottom-nav">
+    <button onclick="location.href='index.html'">🏠 Home</button>
+    <button onclick="alert('Seller Section')">🛍 Seller</button>
+    <button onclick="alert('Account Section')">👤 Account</button>
+    <button onclick="alert('View Cart')">🛒 Cart</button>
+  </nav>
+
+  <script>
+    // demo products list (ye tum bad me database ya JSON se bhi le sakte ho)
+    <!-- const products = [
+      { name: "10kΩ Resistor", price: "₹10", img: "https://via.placeholder.com/150" },
+      { name: "100μF Capacitor", price: "₹15", img: "https://via.placeholder.com/150" },
+      { name: "Push Button Switch", price: "₹50", img: "https://via.placeholder.com/150" },
+      { name: "Wire Connector", price: "₹30", img: "https://via.placeholder.com/150" },
+      { name: "DC Motor", price: "₹250", img: "https://via.placeholder.com/150" },
+      { name: "IR Sensor", price: "₹120", img: "https://via.placeholder.com/150" }
+    ]; -->
+
+    // get query from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get("q") ? urlParams.get("q").toLowerCase() : "";
+    document.getElementById("searchQuery").innerText = query;
+
+    // filter products
+    const resultList = document.getElementById("resultList");
+    const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+
+    if (filtered.length > 0) {
+      filtered.forEach(p => {
+        let card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.price}</p>
+        `;
+        resultList.appendChild(card);
+      });
+    } else {
+      resultList.innerHTML = "<p>No products found.</p>";
+    }
+  </script>
+
+
+  <!-- Offers section -->
+  <section class="offers">
+    <h2>Offers of the Products</h2>
+    <div class="offer-list">
+      <a href="offer.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Offer">
+          <h3>Flat 20% off on Tools</h3>
+        </div>
+      </a>
+      <a href="offer.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Offer">
+          <h3>Buy 1 Get 1 Free - Wires</h3>
+        </div>
+      </a>
+      <a href="offer.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Offer">
+          <h3>Special Discount on Sensors</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Products in grid -->
+  <section class="products">
+    <h2>Products</h2>
+    <div class="product-list">
+      <a href="product.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Resistor">
+          <h3>10kΩ Resistor</h3>
+        </div>
+      </a>
+      <a href="product.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Capacitor">
+          <h3>100μF Capacitor</h3>
+        </div>
+      </a>
+      <a href="product.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Switch">
+          <h3>Push Button Switch</h3>
+        </div>
+      </a>
+      <a href="product.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Connector">
+          <h3>Wire Connector</h3>
+        </div>
+      </a>
+      <a href="product.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Motor">
+          <h3>DC Motor</h3>
+        </div>
+      </a>
+      <a href="product.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Sensor">
+          <h3>IR Sensor</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <nav class="bottom-nav">
+    <button onclick="location.href='homepage.html'">🏠 Home</button>
+    <!-- if you had: <button onclick="alert('Seller Section')"> -->
+    <button onclick="location.href='seller.html'">🛍 Seller</button>
+
+   
+    <button onclick="location.href='account.html'">👤 Account</button>
+
+    <button onclick="alert('View Cart')">🛒 Cart</button>
+  </nav>
+
+  <!- JS link -->
+    <script src="{% static 'core/js/homepage.js' %}"></script>
+
+</body>
+
+</html>

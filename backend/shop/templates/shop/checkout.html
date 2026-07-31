@@ -1,0 +1,42 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Checkout
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'shop/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="checkout-container">
+
+<h1>Checkout</h1>
+
+<form method="POST" class="checkout-form">
+    {% csrf_token %}
+
+    <textarea name="address" placeholder="Enter Address" required>{{ customer.address }}</textarea>
+    <br><br>
+
+    <input type="text" name="phone" placeholder="Phone Number" required>
+    <br><br>
+
+    <label>Payment Method</label>
+    <br>
+
+    <select name="payment_method" required>
+        <option value="COD">Cash On Delivery</option>
+        <option value="UPI">UPI</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Place Order</button>
+
+</form>
+</div>
+
+{% endblock %}

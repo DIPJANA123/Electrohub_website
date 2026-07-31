@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ceiling Fans - ElectroHub</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6fb; margin: 0; }
+    header { background: #0078ff; color: white; text-align: center; padding: 1rem; font-size: 1.5rem; font-weight: bold; }
+    .product-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; padding: 2rem; }
+    .card { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 220px; text-align: center; padding: 1rem; transition: 0.3s; cursor: pointer; }
+    .card:hover { transform: scale(1.05); }
+    .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; }
+    .price { color: #008000; font-weight: bold; margin-top: 0.3rem; }
+  </style>
+</head>
+<body>
+  <header>🌀 Ceiling Fans</header>
+
+  <section class="product-list">
+    <div class="card" onclick="openProduct('Philips AirCool 1200mm', 'Philips', 1200, 'https://via.placeholder.com/200x160')">
+      <img src="https://via.placeholder.com/200x160" alt="Philips Fan">
+      <h3>Philips AirCool 1200mm</h3>
+      <p class="price">₹1200</p>
+    </div>
+
+    <div class="card" onclick="openProduct('Havells TurboJet 1100mm', 'Havells', 1450, 'https://via.placeholder.com/200x160')">
+      <img src="https://share.google/i2HWkGflNp5T20dml" alt="Havells Fan">
+      <h3>Havells TurboJet 1100mm</h3>
+      <p class="price">₹1450</p>
+    </div>
+
+    <div class="card" onclick="openProduct('Usha PowerMaxx 1200mm', 'Usha', 1300, 'https://via.placeholder.com/200x160')">
+      <img src="https://via.placeholder.com/200x160" alt="Usha Fan">
+      <h3>Usha PowerMaxx 1200mm</h3>
+      <p class="price">₹1300</p>
+    </div>
+
+    <div class="card" onclick="openProduct('Crompton WindPro 900mm', 'Crompton', 950, 'https://via.placeholder.com/200x160')">
+      <img src="https://via.placeholder.com/200x160" alt="Crompton Fan">
+      <h3>Crompton WindPro 900mm</h3>
+      <p class="price">₹950</p>
+    </div>
+  </section>
+
+  <script>
+    function openProduct(name, brand, price, img) {
+      // send data to next page via URL
+      const url = `../product.html?name=${encodeURIComponent(name)}&brand=${encodeURIComponent(brand)}&price=${price}&img=${encodeURIComponent(img)}`;
+      location.href =url;
+    }
+  </script>
+</body>
+</html>

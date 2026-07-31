@@ -1,0 +1,71 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+My Orders
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'shop/css/orders.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="orders-container">
+
+<h1 class="orders-title">📦 My Orders</h1>
+
+{% if orders %}
+
+    {% for order in orders %}
+
+        <div class="order-card">
+
+            <h3>Order #{{ order.id }}</h3>
+
+            <p>Total: ₹{{ order.total }}</p>
+
+            <p>Address: {{ order.address }}</p>
+
+            <p>Phone: {{ order.phone }}</p>
+
+            <p>Date: {{ order.created_at }}</p>
+            <p>
+    <b>Status:</b>
+
+    {% if order.status == "Pending" %}
+        <span class="status pending">Pending</span>
+
+    {% elif order.status == "Confirmed" %}
+        <span class="status confirmed">Confirmed</span>
+
+    {% elif order.status == "Shipped" %}
+        <span class="status shipped">Shipped</span>
+
+    {% elif order.status == "Delivered" %}
+        <span class="status delivered">Delivered</span>
+
+    {% else %}
+        <span class="status cancelled">Cancelled</span>
+
+    {% endif %}
+</p>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <h3>No Orders Yet</h3>
+
+{% endif %}
+
+<br>
+
+<a href="{% url 'homepage' %}" class="shop-btn">
+    🛍 Continue Shopping
+</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Customer Login
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="login-container">
+
+    <h2>Customer Login</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <input type="email"
+               name="email"
+               placeholder="Email"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Password"
+               required>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

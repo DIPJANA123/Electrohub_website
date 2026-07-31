@@ -1,0 +1,47 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Edit Profile
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/edit_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="edit-profile-container">
+
+    <h2>✏️ Edit Profile</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Name</label>
+        <input type="text"
+               name="name"
+               value="{{ customer.name }}"
+               required>
+
+        <label>Email</label>
+        <input type="email"
+               name="email"
+               value="{{ customer.email }}"
+               required>
+
+        <label>Phone</label>
+        <input type="text"
+               name="phone"
+               value="{{ customer.phone }}"
+               required>
+
+        <button type="submit">
+            Save Changes
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

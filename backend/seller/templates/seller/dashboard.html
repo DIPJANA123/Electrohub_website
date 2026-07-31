@@ -1,0 +1,43 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Seller Dashboard
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'seller/css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h1>🛍 Seller Dashboard</h1>
+
+    <h2>Welcome {{ seller_name }} 🎉</h2>
+
+    <div class="dashboard-menu">
+
+        <a href="{% url 'add_product' %}">
+            <button>➕ Add Product</button>
+        </a>
+
+        <a href="{% url 'my_products' %}">
+            <button>📦 My Products</button>
+        </a>
+
+        <a href="{% url 'seller_orders' %}">
+    <button>📋 Customer Orders</button>
+</a>
+
+        <a href="{% url 'seller_login' %}">
+            <button>🚪 Logout</button>
+        </a>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

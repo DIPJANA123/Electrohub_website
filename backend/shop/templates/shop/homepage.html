@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroHub - Homepage</title>
+
+  <!-- CSS link-->
+  <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+</head>
+
+<body>
+
+  <header>ElectroHub</header>
+
+  <section class="categories">
+    <a href="/?category=Ceiling Fan">
+    <div class="category">Ceiling Fan</div>
+</a>
+
+<a href="/?category=Tube Light">
+    <div class="category">Tube Light</div>
+</a>
+
+<a href="/?category=LED">
+    <div class="category">LED</div>
+</a>
+
+<a href="/?category=Wire">
+    <div class="category">Wire</div>
+</a>
+
+<a href="/?category=Motor">
+    <div class="category">Motor</div>
+</a>
+  </section>
+  
+
+  <header>🔍 Search Results</header>
+
+<section class="search">
+
+<form method="GET" action="/">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Search products..."
+        value="{{ request.GET.search }}">
+
+    <button type="submit">🔍</button>
+
+</form>
+
+</section>
+
+{% comment %} <script>
+  function searchProduct() {
+    const query = document.getElementById('searchInput').value;
+    if(query.trim() !== "") {
+      alert("Searching for: " + query);
+      // You can add code here to show results in #resultList
+    } else {
+      alert("Please enter a product to search.");
+    }
+  }
+
+  // Add Enter key functionality
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent form submission if inside a form
+      searchProduct(); // Call the search function
+    }
+  });
+</script> {% endcomment %}
+
+
+  {% comment %} <nav class="bottom-nav">
+    <button onclick="location.href='/'">🏠 Home</button>
+    <button onclick="alert('Seller Section')">🛍 Seller</button>
+    <button onclick="alert('Account Section')">👤 Account</button>
+    <button onclick="location.href='{% url 'cart' %}'">🛒 Cart</button>
+  </nav> {% endcomment %}
+
+  
+
+  <!-- Offers section -->
+  <section class="offers">
+    <h2>Offers of the Products</h2>
+    <div class="offer-list">
+      <a href="offer.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Offer">
+          <h3>Flat 20% off on Tools</h3>
+        </div>
+      </a>
+      <a href="offer.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Offer">
+          <h3>Buy 1 Get 1 Free - Wires</h3>
+        </div>
+      </a>
+      <a href="offer.html">
+        <div class="card"><img src="https://via.placeholder.com/150" alt="Offer">
+          <h3>Special Discount on Sensors</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Products in grid -->
+  <section class="products">
+    <h2>Total Products: {{ products|length }}</h2>
+
+    <div class="product-list">
+
+        {% for product in products %}
+
+        <a href="{% url 'product_detail' product.id %}">
+
+            <div class="card">
+
+                {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% endif %}
+
+                <h3>{{ product.name }}</h3>
+
+                <p>₹{{ product.price }}</p>
+
+            </div>
+
+        </a>
+
+        {% empty %}
+
+        <p>No products available.</p>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+  <nav class="bottom-nav">
+
+    <button onclick="location.href='/'">🏠 Home</button>
+
+    <a href="{% url 'seller_home' %}">
+    <button>🛍 Seller</button>
+</a>
+
+    <a href="{% url 'account_home' %}">
+    <button>👤 Account</button>
+</a>
+
+    <button onclick="location.href='{% url 'cart' %}'">🛒 Cart</button>
+
+</nav>
+
+  <!- JS link -->
+    <script src="{% static 'shop/js/script.js' %}"></script>
+
+</body>
+
+</html>
+
+{% comment %} {% endblock %} {% endcomment %}

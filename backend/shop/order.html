@@ -1,0 +1,6 @@
+<h1>My Orders</h1>
+{% for o in orders %}
+  <p>Order #{{ o.id }} - ₹{{ o.total }} - {{ o.created }}</p>
+{% empty %}
+  <p>No orders yet</p>
+{% endfor %}

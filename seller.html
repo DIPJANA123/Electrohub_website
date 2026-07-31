@@ -1,0 +1,103 @@
+<!-- save as seller.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seller Login / Signup - ElectroHub</title>
+  <style>
+    body {font-family: Arial, sans-serif; background:#f3f4f6; display:flex; align-items:center; justify-content:center; min-height:100vh;}
+    .box {background:#fff; padding:20px; border-radius:10px; width:360px; box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+    h2{color:#0B6AF5; text-align:center;}
+    input, textarea {width:100%; padding:8px; margin:8px 0; border:1px solid #ddd; border-radius:6px;}
+    button {width:100%; padding:10px; margin-top:8px; border:none; border-radius:6px; background:#0B6AF5; color:#fff; cursor:pointer;}
+    .small {font-size:13px; text-align:center; margin-top:10px;}
+    .link {color:#0B6AF5; cursor:pointer;}
+  </style>
+</head>
+<body>
+
+  <div class="box" id="formBox">
+    <h2>Seller — Login / Signup</h2>
+
+    <!-- LOGIN -->
+    <div id="loginView">
+      <input id="loginPhone" placeholder="Phone number" />
+      <input id="loginPassword" type="password" placeholder="Password" />
+      <button onclick="sellerLogin()">Login</button>
+      <div class="small">New seller? <span class="link" onclick="showSignup()">Create account</span></div>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signupView" style="display:none;">
+      <input id="s_name" placeholder="Full name" />
+      <input id="s_shop" placeholder="Shop / Store name" />
+      <input id="s_phone" placeholder="Phone number" />
+      <input id="s_email" placeholder="Email (optional)" />
+      <textarea id="s_address" placeholder="Address (optional)"></textarea>
+      <input id="s_password" type="password" placeholder="Password" />
+      <input id="s_confirm" type="password" placeholder="Confirm password" />
+      <button onclick="sellerSignup()">Create account</button>
+      <div class="small">Already a seller? <span class="link" onclick="showLogin()">Login</span></div>
+    </div>
+
+  </div>
+
+  <script>
+    // If already logged in, redirect to dashboard
+    if (localStorage.getItem('seller')) {
+      window.location.href = 'saller_product.html';
+    }
+
+    function showSignup(){
+      document.getElementById('loginView').style.display = 'none';
+      document.getElementById('signupView').style.display = 'block';
+    }
+    function showLogin(){
+      document.getElementById('signupView').style.display = 'none';
+      document.getElementById('loginView').style.display = 'block';
+    }
+
+    function sellerSignup(){
+      const name = document.getElementById('s_name').value.trim();
+      const shop = document.getElementById('s_shop').value.trim();
+      const phone = document.getElementById('s_phone').value.trim();
+      const email = document.getElementById('s_email').value.trim();
+      const address = document.getElementById('s_address').value.trim();
+      const pass = document.getElementById('s_password').value;
+      const conf = document.getElementById('s_confirm').value;
+
+      if(!name || !shop || !phone || !pass){ alert('Please fill Name, Shop, Phone and Password.'); return; }
+      if(pass !== conf){ alert('Passwords do not match'); return; }
+
+      // Create seller object
+      const seller = { id: 'seller_' + Date.now(), name, shop, phone, email, address, password: pass };
+      // Save in localStorage: maintain sellers list
+      const sellers = JSON.parse(localStorage.getItem('sellers') || '[]');
+      sellers.push(seller);
+      localStorage.setItem('sellers', JSON.stringify(sellers));
+
+      // Set session (logged in)
+      localStorage.setItem('seller', JSON.stringify(seller));
+      alert('Account created and logged in as ' + name);
+      window.location.href = 'seller-dashboard.html';
+    }
+
+    function sellerLogin(){
+      const phone = document.getElementById('loginPhone').value.trim();
+      const pass = document.getElementById('loginPassword').value;
+      if(!phone || !pass){ alert('Enter phone and password'); return; }
+
+      const sellers = JSON.parse(localStorage.getItem('sellers') || '[]');
+      const found = sellers.find(s => (s.phone === phone || s.email === phone) && s.password === pass);
+      if(found){
+        localStorage.setItem('seller', JSON.stringify(found));
+        alert('Welcome back, ' + found.name);
+        window.location.href = 'seller-dashboard.html';
+      } else {
+        alert('Seller not found or wrong credentials.');
+      }
+    }
+  </script>
+</body>
+</html>

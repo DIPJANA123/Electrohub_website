@@ -1,0 +1,71 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+My Cart
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'shop/css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="cart-container">
+
+    <h1>🛒 My Cart</h1>
+
+    {% for item in items %}
+
+    <div class="cart-item">
+
+        <h3>{{ item.product.name }}</h3>
+
+        <div class="quantity-box">
+
+    <a href="{% url 'decrease_cart' item.id %}">
+        <button class="qty-btn">−</button>
+    </a>
+
+    <span class="qty-number">{{ item.quantity }}</span>
+
+    <a href="{% url 'increase_cart' item.id %}">
+        <button class="qty-btn">+</button>
+    </a>
+
+</div>
+
+        <p>Price : ₹{{ item.product.price }}</p>
+
+        <p><strong>
+Total : ₹{{ item.product.price|floatformat:0 }} × {{ item.quantity }}
+</strong></p>
+
+<a href="{% url 'remove_cart' item.id %}">
+    <button class="remove-btn">🗑 Remove</button>
+</a>
+
+    </div>
+
+    {% empty %}
+
+    <h2>Your Cart is Empty</h2>
+
+    {% endfor %}
+
+    {% if items %}
+
+<hr>
+
+<h2>Grand Total : ₹{{ total }}</h2>
+
+{% endif %}
+
+    <br>
+
+    <a href="{% url 'checkout' %}">
+        <button class="btn">Proceed to Checkout</button>
+    </a>
+
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Order Successful
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'shop/css/order_success.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="success-container">
+
+    <h1>🎉 Congratulations!</h1>
+
+    <h2>Your Order Has Been Placed Successfully.</h2>
+
+    <p>Thank you for shopping with <b>ElectroHub</b>.</p>
+
+    <div class="success-buttons">
+
+        <a href="{% url 'homepage' %}">
+            <button class="home-btn">
+                🏠 Continue Shopping
+            </button>
+        </a>
+
+        <a href="{% url 'orders' %}">
+            <button class="order-btn">
+                📦 View My Orders
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

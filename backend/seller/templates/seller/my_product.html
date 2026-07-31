@@ -1,0 +1,59 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+My Products
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'seller/css/my_products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="my-products-container">
+
+<h1>📦 My Products</h1>
+
+<h1>My Products</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Status</th>
+    </tr>
+
+    {% for product in products %}
+    <tr>
+        <td>
+            {% if product.image %}
+                <img src="{{ product.image.url }}" width="80">
+            {% endif %}
+        </td>
+
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>₹{{ product.price }}</td>
+
+        <td>
+            {% if product.is_approved %}
+                ✅ Approved
+            {% else %}
+                ⏳ Pending
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No products uploaded.</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'shop/css/product_detail.css' %}">
+{% endblock %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="product-detail-page">
+
+   
+
+
+
+    <div class="product-gallery">
+
+    {% if product.image %}
+        <img class="main-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% endif %}
+
+</div>
+
+
+<hr>
+
+<div class="product-info">
+
+    <h1>{{ product.name }}</h1>
+
+    <h2>₹{{ product.price }}</h2>
+
+    <p><b>Category:</b> {{ product.category }}</p>
+
+    <p>{{ product.description }}</p>
+
+    <div class="product-buttons">
+
+        <a href="{% url 'add_to_cart' product.id %}">
+            <button class="cart-btn">🛒 Add To Cart</button>
+        </a>
+
+       {% if user.is_authenticated %}
+
+<a href="{% url 'add_to_cart' product.id %}">
+    <button class="buy-btn">⚡ Order Now</button>
+</a>
+
+{% else %}
+
+<a href="{% url 'login' %}?next={% url 'add_to_cart' product.id %}">
+    <button class="buy-btn">⚡ Order Now</button>
+</a>
+
+{% endif %}
+
+    </div>
+
+</div>
+
+<nav class="bottom-nav">
+
+    <button onclick="location.href='/'">🏠 Home</button>
+
+    <button onclick="location.href='{% url 'account_home' %}'">👤 Account</button>
+
+    <button onclick="location.href='{% url 'cart' %}'">🛒 Cart</button>
+
+    <button onclick="location.href='{% url 'orders' %}'">📦 Orders</button>
+
+</nav>
+</div>
+
+{% endblock %}

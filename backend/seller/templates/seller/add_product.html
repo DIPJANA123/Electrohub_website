@@ -1,0 +1,52 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Add Product
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'seller/css/add_product.css' %}">
+{% endblock %}
+{% comment %} <link rel="stylesheet" href="/static/seller/css/add_product.css"> {% endcomment %}
+
+{% block content %}
+
+<div class="add-product-container">
+    <h2>Add New Product</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>Product Name</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Category</label><br>
+    <select name="category" required>
+        <option value="">Select Category</option>
+
+        {% for category in categories %}
+        <option value="{{ category.id }}">
+            {{ category.name }}
+        </option>
+        {% endfor %}
+
+    </select><br><br>
+
+    <label>Price</label><br>
+    <input type="number" name="price" required><br><br>
+
+    <label>Description</label><br>
+    <textarea name="description" rows="5"></textarea><br><br>
+
+    <label>Product Image</label><br>
+    <input type="file" name="image" required><br><br>
+
+    <button type="submit">
+        Upload Product
+    </button>
+
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - ElectroHub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .checkout-container {
+      max-width: 400px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .checkout-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #0B6AF5;
+    }
+    .checkout-container label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .checkout-container input,
+    .checkout-container textarea,
+    .checkout-container select {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .checkout-container button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.8rem;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .checkout-container button:hover {
+      background: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Checkout</header>
+
+  <div class="checkout-container">
+    <h2>Place Your Order</h2>
+    <form onsubmit="confirmOrder(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" placeholder="Enter phone number" required>
+      <label for="email">email id</label>
+      <input type="@" id="email" placeholder="Enter your email" required>
+
+      <label for="address">Delivery Address</label>
+      <textarea id="address" rows="3" placeholder="Enter your address" required></textarea>
+
+      <label for="payment">Payment Method</label>
+      <select id="payment" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="upi">UPI</option>
+        <option value="card">Debit/Credit Card</option>
+      </select>
+
+      <button type="submit">Confirm Order</button>
+    </form>
+  </div>
+
+  <script>
+    function confirmOrder(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+       const email = document.getElementById('email').value;
+      const payment = document.getElementById('payment').value;
+
+      if(name && phone && address && payment){
+        alert("✅ Order Placed Successfully!\n\nName: " + name + "\nPhone: " + phone + "\nAddress: " + address + "\nPayment: " + payment);
+        window.location.href = "account.html"; // order ke baad account page pe redirect
+      } else {
+        alert("⚠️ Please fill all the details before placing order.");
+      }
+    }
+  </script>
+
+</body>
+</html>

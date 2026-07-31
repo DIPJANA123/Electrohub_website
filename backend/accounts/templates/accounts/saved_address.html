@@ -1,0 +1,36 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Saved Address
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/saved_address.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="saved-address-container">
+
+    <h2>📍 Saved Address</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Delivery Address</label>
+
+        <textarea
+            name="address"
+            rows="6"
+            required>{{ customer.address }}</textarea>
+
+        <button type="submit">
+            Save Address
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
