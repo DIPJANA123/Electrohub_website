@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Product, Cart, Order, Category
 from accounts.models import Customer
 
+from django.http import HttpResponse
+
 
 
 # Homepage
@@ -116,8 +118,18 @@ def checkout(request):
         items.delete()
 
         return redirect('order_success')
-    customer = Customer.objects.get(
+    
+    # customer = Customer.objects.get(
+    #     email=request.user.email
+    # )
+    customer = Customer.objects.filter(
         email=request.user.email
+    ).first()
+
+    if customer is None:
+        return HttpResponse(
+        f"Customer not found.<br>"
+        f"Logged in email: {request.user.email}"
     )
 
     return render(
