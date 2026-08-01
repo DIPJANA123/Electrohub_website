@@ -117,8 +117,8 @@ def checkout(request):
 
         return redirect('order_success')
     customer = Customer.objects.get(
-    id=request.session['customer_id']
-)
+        email=request.user.email
+    )
 
     return render(
     request,

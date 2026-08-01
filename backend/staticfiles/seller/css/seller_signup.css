@@ -1,0 +1,71 @@
+body{
+    background:linear-gradient(135deg,#dbeafe,#e0f2fe,#f8fafc);
+}
+
+.seller-signup-container{
+    width:90%;
+    max-width:450px;
+    margin:50px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.seller-signup-container h2{
+    text-align:center;
+    color:#2874F0;
+    margin-bottom:25px;
+}
+
+.seller-signup-container input{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.seller-signup-container input:focus{
+    outline:none;
+    border-color:#2874F0;
+    box-shadow:0 0 8px rgba(40,116,240,.3);
+}
+
+.seller-signup-container button{
+    width:100%;
+    padding:14px;
+    background:#2874F0;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.seller-signup-container button:hover{
+    background:#0B6AF5;
+}
+
+.seller-signup-container a{
+    display:block;
+    margin-top:20px;
+    text-align:center;
+    color:#2874F0;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.seller-signup-container a:hover{
+    text-decoration:underline;
+}
+
+.error-message{
+    color:red;
+    text-align:center;
+    margin-bottom:15px;
+    font-weight:bold;
+}

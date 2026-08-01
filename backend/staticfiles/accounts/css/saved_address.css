@@ -1,0 +1,60 @@
+body{
+    background:#f4f7fc;
+}
+
+.saved-address-container{
+    width:90%;
+    max-width:650px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.saved-address-container h2{
+    text-align:center;
+    color:#2874F0;
+    margin-bottom:25px;
+}
+
+.saved-address-container label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:8px;
+    color:#333;
+}
+
+.saved-address-container textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    resize:vertical;
+    min-height:150px;
+    box-sizing:border-box;
+}
+
+.saved-address-container textarea:focus{
+    outline:none;
+    border-color:#2874F0;
+}
+
+.saved-address-container button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    background:#2874F0;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.saved-address-container button:hover{
+    background:#0b6af5;
+}
