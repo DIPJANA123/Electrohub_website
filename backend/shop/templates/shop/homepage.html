@@ -13,7 +13,17 @@
 
 <body>
 
-  <header>ElectroHub</header>
+  {% load static %}
+
+<div id="splash-screen">
+    <img src="{% static 'shop/images/logo.png' %}" alt="ElectroHub">
+    <h2>ElectroHub</h2>
+</div>  
+
+<header class="site-header">
+    <img src="{% static 'shop/images/logo.png' %}" alt="ElectroHub Logo">
+    <span>ElectroHub</span>
+</header>
 
   <section class="categories">
     <a href="/?category=Ceiling Fan">
@@ -160,6 +170,14 @@
 
   <!- JS link -->
     <script src="{% static 'shop/js/script.js' %}"></script>
+
+
+
+<script>
+    setTimeout(function () {
+        document.getElementById("splash-screen").style.display = "none";
+    }, 2000);
+</script>    
 
 </body>
 
