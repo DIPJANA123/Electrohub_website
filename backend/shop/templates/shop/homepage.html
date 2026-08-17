@@ -174,10 +174,15 @@
 
 
 <script>
-    setTimeout(function () {
+    if (localStorage.getItem("electrohubVisited")) {
         document.getElementById("splash-screen").style.display = "none";
-    }, 2000);
-</script>    
+    } else {
+        setTimeout(function () {
+            document.getElementById("splash-screen").style.display = "none";
+            localStorage.setItem("electrohubVisited", "true");
+        }, 2000);
+    }
+</script>
 
 </body>
 
