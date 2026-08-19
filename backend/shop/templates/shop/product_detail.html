@@ -13,17 +13,47 @@
 
 <div class="product-detail-page">
 
-   
+<div class="product-gallery">
+
+    <div class="main-image-wrapper">
+
+        <button class="gallery-arrow left-arrow"
+                onclick="previousImage()">❮</button>
+
+        {% if product.image %}
+            <img class="main-image"
+                 id="mainProductImage"
+                 src="{{ product.image.url }}"
+                 alt="{{ product.name }}">
+        {% endif %}
+
+        <button class="gallery-arrow right-arrow"
+                onclick="nextImage()">❯</button>
+
+    </div>
+
+    <div class="thumbnail-container">
+
+        {% if product.image %}
+            <img class="thumbnail active"
+                 src="{{ product.image.url }}"
+                 onclick="selectImage(0)">
+        {% endif %}
+
+        {% for image in product.images.all %}
+            <img class="thumbnail"
+                 src="{{ image.image.url }}"
+                 onclick="selectImage({{ forloop.counter }})">
+        {% endfor %}
+
+    </div>
+
+</div>   
 
 
 
-    <div class="product-gallery">
+  
 
-    {% if product.image %}
-        <img class="main-image" src="{{ product.image.url }}" alt="{{ product.name }}">
-    {% endif %}
-
-</div>
 
 
 <hr>
@@ -74,5 +104,100 @@
 
 </nav>
 </div>
+
+
+<script>
+const productImages = [
+    {% if product.image %}
+        "{{ product.image.url }}",
+    {% endif %}
+
+    {% for image in product.images.all %}
+        "{{ image.image.url }}",
+    {% endfor %}
+];
+
+let currentImageIndex = 0;
+
+function showProductImage(index) {
+
+    if (productImages.length === 0) {
+        return;
+    }
+
+    currentImageIndex = index;
+
+    document.getElementById("mainProductImage").src =
+        productImages[currentImageIndex];
+
+    document.querySelectorAll(".thumbnail").forEach(function (thumb, i) {
+        thumb.classList.toggle(
+            "active",
+            i === currentImageIndex
+        );
+    });
+}
+
+function selectImage(index) {
+    showProductImage(index);
+}
+
+function nextImage() {
+
+    if (productImages.length === 0) {
+        return;
+    }
+
+    currentImageIndex =
+        (currentImageIndex + 1) % productImages.length;
+
+    showProductImage(currentImageIndex);
+}
+
+function previousImage() {
+
+    if (productImages.length === 0) {
+        return;
+    }
+
+    currentImageIndex =
+        (currentImageIndex - 1 + productImages.length)
+        % productImages.length;
+
+    showProductImage(currentImageIndex);
+}
+
+
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const mainProductImage = document.getElementById("mainProductImage");
+
+mainProductImage.addEventListener("touchstart", function (event) {
+    touchStartX = event.changedTouches[0].screenX;
+});
+
+mainProductImage.addEventListener("touchend", function (event) {
+    touchEndX = event.changedTouches[0].screenX;
+
+    handleSwipe();
+});
+
+function handleSwipe() {
+
+    const swipeDistance = touchEndX - touchStartX;
+
+    // Swipe left → Next image
+    if (swipeDistance < -50) {
+        nextImage();
+    }
+
+    // Swipe right → Previous image
+    if (swipeDistance > 50) {
+        previousImage();
+    }
+}
+</script>
 
 {% endblock %}
