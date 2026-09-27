@@ -253,3 +253,266 @@ body {
         font-size: 16px;
     }
 }
+
+
+
+/* =========================
+   WISHLIST BUTTON
+========================= */
+
+.wishlist-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.wishlist-button a {
+    display: inline-block;
+    padding: 10px 25px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    background: white;
+    color: #333;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.wishlist-button a:hover {
+    color: #2874f0;
+    border-color: #2874f0;
+}
+
+
+/* =========================
+   SHARE BUTTON
+========================= */
+
+.share-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.share-button button {
+    padding: 10px 25px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    background: white;
+    color: #333;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.share-button button:hover {
+    color: #2874f0;
+    border-color: #2874f0;
+}
+
+
+/* Wishlist + Share Side by Side */
+
+.product-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.product-actions .wishlist-button,
+.product-actions .share-button {
+    margin: 0;
+}
+
+
+/* =========================
+   CUSTOMER RATING & REVIEW
+========================= */
+
+.review-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.review-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.review-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+}
+
+.review-section label {
+    font-weight: bold;
+}
+
+.review-section select {
+    width: 220px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.review-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.review-section button {
+    width: 160px;
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    background: #2874f0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.review-section button:hover {
+    background: #1257c7;
+}
+
+
+/* =========================
+   CUSTOMER REVIEWS
+========================= */
+
+.customer-review {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.customer-review strong {
+    font-size: 16px;
+}
+
+.customer-review p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.customer-review small {
+    color: #777;
+}
+
+
+
+/* =========================
+   SIMILAR PRODUCTS
+========================= */
+
+.similar-products-section {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.similar-products-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.similar-products {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 5px 0 15px;
+}
+
+.similar-product-card {
+    flex: 0 0 180px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.similar-product-card:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.similar-product-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.similar-product-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.similar-product-card h3 {
+    font-size: 15px;
+    margin: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.similar-product-card p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #2874f0;
+    margin: 5px 0;
+}
+
+
+
+.similar-rating {
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.similar-cart-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 12px;
+
+    background: #2874f0;
+    color: white !important;
+
+    border-radius: 5px;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.similar-cart-btn:hover {
+    background: #1257c7;
+}

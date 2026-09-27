@@ -48,53 +48,91 @@
   </section>
   
 
-  <header>🔍 Search Results</header>
+ <header>🔍 Search Results</header>
 
 <section class="search">
 
-<form method="GET" action="/">
+    <form method="GET" action="/" class="search-form">
 
-    <input
-        type="text"
-        name="search"
-        placeholder="Search products..."
-        value="{{ request.GET.search }}">
+        <div class="search-box-wrapper">
 
-    <button type="submit">🔍</button>
+            <input
+                type="text"
+                name="search"
+                id="searchInput"
+                placeholder="Search products..."
+                value="{{ request.GET.search }}"
+                autocomplete="off">
+                <button type="submit">🔍</button>
 
-</form>
+            <div id="searchSuggestions" class="search-suggestions"></div>
+            
+
+        </div>
+
+        
+
+    </form>
 
 </section>
 
-{% comment %} <script>
-  function searchProduct() {
-    const query = document.getElementById('searchInput').value;
-    if(query.trim() !== "") {
-      alert("Searching for: " + query);
-      // You can add code here to show results in #resultList
-    } else {
-      alert("Please enter a product to search.");
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const suggestionsBox = document.getElementById("searchSuggestions");
+
+searchInput.addEventListener("input", function () {
+
+    const query = this.value.trim();
+
+    if (query.length < 2) {
+        suggestionsBox.innerHTML = "";
+        suggestionsBox.style.display = "none";
+        return;
     }
-  }
 
-  // Add Enter key functionality
-  const searchInput = document.getElementById('searchInput');
-  searchInput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-      event.preventDefault(); // Prevent form submission if inside a form
-      searchProduct(); // Call the search function
-    }
-  });
-</script> {% endcomment %}
+    fetch(`/search-suggestions/?q=${encodeURIComponent(query)}`)
+        .then(response => response.json())
+        .then(products => {
 
+            suggestionsBox.innerHTML = "";
 
-  {% comment %} <nav class="bottom-nav">
-    <button onclick="location.href='/'">🏠 Home</button>
-    <button onclick="alert('Seller Section')">🛍 Seller</button>
-    <button onclick="alert('Account Section')">👤 Account</button>
-    <button onclick="location.href='{% url 'cart' %}'">🛒 Cart</button>
-  </nav> {% endcomment %}
+            if (products.length === 0) {
+                suggestionsBox.style.display = "none";
+                return;
+            }
 
+            products.forEach(product => {
+
+                const suggestion = document.createElement("div");
+
+                suggestion.className = "search-suggestion";
+
+                suggestion.innerHTML = `
+                    <span>🔍 ${product.name}</span>
+                    <small>₹${product.price}</small>
+                `;
+
+                suggestion.addEventListener("click", function () {
+
+                    searchInput.value = product.name;
+
+                    suggestionsBox.innerHTML = "";
+                    suggestionsBox.style.display = "none";
+
+                    searchInput.form.submit();
+                });
+
+                suggestionsBox.appendChild(suggestion);
+            });
+
+            suggestionsBox.style.display = "block";
+        })
+        .catch(error => {
+            console.error("Search suggestion error:", error);
+        });
+});
+</script>
   
 
   <!-- Offers section -->

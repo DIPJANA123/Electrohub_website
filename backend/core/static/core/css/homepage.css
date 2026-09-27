@@ -1,5 +1,5 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-body { background: #1fa7d0; color: #111; }
+body { background: #1bc812; color: #111; }
 header { background: #fff; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; font-size: 1.5rem; font-weight: bold; color: #72ec3d; }
 
 .categories { 
@@ -12,7 +12,7 @@ header { background: #fff; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .category { 
   flex: 0 0 auto;         
-  background: #e5e7eb; 
+  background: #c0c7c2; 
   padding: 0.5rem 1rem; 
   border-radius: 8px; 
   cursor: pointer; 

@@ -1,0 +1,426 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}Help Center{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="help-container">
+
+    <h1>🆘 Help Center</h1>
+
+    <p>Apni problem select karo aur complete solution dekho.</p>
+
+
+    <!-- =========================
+         ORDER HELP
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('orderHelp')">
+            <h3>📦 Order kaise place karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="orderHelp">
+
+            <p><strong>Order place karne ke steps:</strong></p>
+
+            <ol>
+                <li>Homepage par jao.</li>
+                <li>Search bar se apna product search karo.</li>
+                <li>Product par click karke product details dekho.</li>
+                <li><strong>Order Now</strong> ya <strong>Add to Cart</strong> par click karo.</li>
+                <li>Agar login nahi ho to apne account mein login karo.</li>
+                <li>Delivery address aur phone number enter karo.</li>
+                <li>Payment method select karo.</li>
+                <li><strong>Place Order</strong> par click karo.</li>
+                <li>Order successfully place hone ke baad tum ise <strong>My Orders</strong> mein dekh sakte ho.</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ORDER TRACKING
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('trackingHelp')">
+            <h3>🚚 Order ko track kaise karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="trackingHelp">
+
+            <p><strong>Order track karne ke steps:</strong></p>
+
+            <ol>
+                <li>Apne account mein login karo.</li>
+                <li><strong>My Account</strong> open karo.</li>
+                <li><strong>My Orders</strong> par click karo.</li>
+                <li>Jis order ko track karna hai us order ko dekho.</li>
+                <li>Order ke andar tracking timeline दिखाई देगी.</li>
+            </ol>
+
+            <p>
+                Tracking mein order ke different stages dikh sakte hain:
+            </p>
+
+            <ul>
+                <li>✓ Order Placed</li>
+                <li>✓ Confirmed</li>
+                <li>✓ Shipped</li>
+                <li>✓ Out for Delivery</li>
+                <li>✓ Delivered</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PAYMENT HELP
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('paymentHelp')">
+            <h3>💳 Payment kaise karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="paymentHelp">
+
+            <p><strong>ElectroHub par available payment methods:</strong></p>
+
+            <ul>
+                <li>💵 Cash on Delivery (COD)</li>
+                <li>📱 UPI</li>
+            </ul>
+
+            <p><strong>Payment method select karne ke steps:</strong></p>
+
+            <ol>
+                <li>Checkout page open karo.</li>
+                <li>Delivery details enter karo.</li>
+                <li>Payment method select karo.</li>
+                <li>Order place karo.</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         REPLACEMENT
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('replacementHelp')">
+            <h3>🔄 Replacement kaise request karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="replacementHelp">
+
+            <p>
+                Agar delivered product damaged, wrong ya defective hai,
+                to replacement request ki ja sakti hai.
+            </p>
+
+            <p><strong>Replacement request ke steps:</strong></p>
+
+            <ol>
+                <li>Apne account mein login karo.</li>
+                <li><strong>My Orders</strong> open karo.</li>
+                <li>Delivered order ko find karo.</li>
+                <li><strong>Request Replacement</strong> par click karo.</li>
+                <li>Replacement reason select karo.</li>
+                <li>Agar zaroori ho to description mein problem explain karo.</li>
+                <li><strong>Submit Request</strong> par click karo.</li>
+            </ol>
+
+            <p>
+                Replacement request submit hone ke baad request status
+                support/admin team ke through update kiya ja sakta hai.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ACCOUNT HELP
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('accountHelp')">
+            <h3>👤 Account / Login problem</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="accountHelp">
+
+            <p><strong>Agar account mein problem aa rahi hai:</strong></p>
+
+            <ol>
+                <li>Apna email aur password carefully check karo.</li>
+                <li>Correct login page se login karne ki koshish karo.</li>
+                <li>Agar account nahi hai to <strong>Create Account</strong> se signup karo.</li>
+                <li>Signup ke baad apne account mein login karo.</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('cartHelp')">
+            <h3>🛒 Cart kaise use karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="cartHelp">
+
+            <p><strong>Cart mein product add karne ke steps:</strong></p>
+
+            <ol>
+                <li>Apna product open karo.</li>
+                <li><strong>Add to Cart</strong> par click karo.</li>
+                <li>Cart page open karo.</li>
+                <li>Yahan product quantity increase ya decrease kar sakte ho.</li>
+                <li>Product remove bhi kar sakte ho.</li>
+                <li>Checkout par jaakar order place karo.</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         WISHLIST
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('wishlistHelp')">
+            <h3>❤️ Wishlist kaise use karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="wishlistHelp">
+
+            <p>
+                Wishlist ka use un products ko save karne ke liye kiya ja sakta hai
+                jinhe tum future mein purchase karna chahte ho.
+            </p>
+
+            <ol>
+                <li>Product details page open karo.</li>
+                <li>❤️ Wishlist option par click karo.</li>
+                <li>Product wishlist mein save ho jayega.</li>
+                <li>Baad mein account ke Wishlist section se product dekh sakte ho.</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SEARCH HELP
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('searchHelp')">
+            <h3>🔍 Product search kaise karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="searchHelp">
+
+            <p><strong>Product search karne ke steps:</strong></p>
+
+            <ol>
+                <li>Homepage par search bar open karo.</li>
+                <li>Product ka naam type karo.</li>
+                <li>Search suggestions mein product select kar sakte ho.</li>
+                <li>Search button par click karo.</li>
+                <li>Available products results mein dikh jayenge.</li>
+            </ol>
+
+            <p>
+                Product ka naam thoda galat type hone par bhi search system
+                similar product find karne ki koshish karta hai.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SELLER HELP
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('sellerHelp')">
+            <h3>🏪 Seller kaise banein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="sellerHelp">
+
+            <p><strong>Seller banne ke basic steps:</strong></p>
+
+            <ol>
+                <li>Seller section open karo.</li>
+                <li>Seller account ke liye signup karo.</li>
+                <li>Apni required information submit karo.</li>
+                <li>Seller account mein login karo.</li>
+                <li>Seller dashboard se products add karo.</li>
+                <li>Product information aur image add karo.</li>
+                <li>Product submit karo.</li>
+                <li>Admin approval ke baad product website par visible hoga.</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTACT SUPPORT
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('contactHelp')">
+            <h3>📞 Customer Support se contact kaise karein?</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="contactHelp">
+
+            <p>
+                Agar tumhari problem Help Center mein solve nahi hoti,
+                to customer support se contact kar sakte ho.
+            </p>
+
+            <p>
+                <strong>Email:</strong> support@electrohub.com
+            </p>
+
+            <p>
+                <strong>Support Hours:</strong>
+                Monday - Saturday, 10:00 AM - 6:00 PM
+            </p>
+
+            <p>
+                Support se contact karte waqt apna Order ID aur problem
+                ki details dena helpful rahega.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FAQ
+    ========================== -->
+
+    <div class="help-box">
+
+        <div class="help-question" onclick="toggleHelp('faqHelp')">
+            <h3>❓ Frequently Asked Questions</h3>
+            <span>▼</span>
+        </div>
+
+        <div class="help-answer" id="faqHelp">
+
+            <p><strong>Q: Kya main order track kar sakta hoon?</strong></p>
+            <p>
+                Haan, My Account → My Orders mein jaakar order tracking
+                information dekh sakte ho.
+            </p>
+
+            <hr>
+
+            <p><strong>Q: Replacement kab request kar sakte hain?</strong></p>
+            <p>
+                Delivered order ke liye available hone par
+                Request Replacement option se request submit kar sakte ho.
+            </p>
+
+            <hr>
+
+            <p><strong>Q: Kya Cash on Delivery available hai?</strong></p>
+            <p>
+                Haan, checkout ke time available payment methods mein
+                COD select kiya ja sakta hai.
+            </p>
+
+            <hr>
+
+            <p><strong>Q: Kya main product wishlist mein save kar sakta hoon?</strong></p>
+            <p>
+                Haan, product page se Wishlist option use karke product
+                save kar sakte ho.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HELP CENTER JAVASCRIPT
+========================== -->
+
+<script>
+
+function toggleHelp(id) {
+
+    const answer = document.getElementById(id);
+
+    if (answer.style.display === "block") {
+
+        answer.style.display = "none";
+
+    } else {
+
+        answer.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+{% endblock %}

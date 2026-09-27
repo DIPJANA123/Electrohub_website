@@ -6,18 +6,35 @@ from accounts.models import Customer
 def signup_view(request):
     if request.method == 'POST':
 
+        username = request.POST['username']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        password = request.POST['password']
+
+        # Check if username already exists
+        if User.objects.filter(username=username).exists():
+            return render(request, 'users/signup.html', {
+                'error': 'Username already exists!'
+            })
+
+        # Check if email already exists
+        if User.objects.filter(email=email).exists():
+            return render(request, 'users/signup.html', {
+                'error': 'Email already exists!'
+            })
+
         user = User.objects.create_user(
-            username=request.POST['username'],
-            password=request.POST['password'],
-            phone=request.POST['phone'],
-            email=request.POST['email']
+            username=username,
+            password=password,
+            phone=phone,
+            email=email
         )
 
         Customer.objects.create(
-            name=request.POST['username'],
-            email=request.POST['email'],
-            phone=request.POST['phone'],
-            password=request.POST['password']
+            name=username,
+            email=email,
+            phone=phone,
+            password=password
         )
 
         login(request, user)

@@ -86,3 +86,216 @@ body{
 .cancelled{
     background:#e74c3c;
 }
+
+
+
+
+.replacement-action {
+    margin-top: 12px;
+}
+
+.replacement-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #ff9800;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.replacement-btn:hover {
+    background: #e68900;
+}
+
+
+
+
+/* ============================= */
+/* PROFESSIONAL ORDER TRACKING */
+/* ============================= */
+
+.order-tracking {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.tracking-step {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    min-height: 70px;
+    opacity: 0.45;
+}
+
+.tracking-step.active {
+    opacity: 1;
+}
+
+.tracking-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 30px;
+    width: 2px;
+    height: 45px;
+    background: #d6d6d6;
+}
+
+.tracking-step.active:not(:last-child)::after {
+    background: #2874f0;
+}
+
+.tracking-dot {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+.tracking-step.active .tracking-dot {
+    background: #2874f0;
+}
+
+.tracking-info {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tracking-info strong {
+    font-size: 16px;
+    color: #222;
+}
+
+.tracking-info span {
+    font-size: 13px;
+    color: #777;
+}
+
+.expected-delivery {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 7px;
+    background: #f5f9ff;
+    font-size: 15px;
+}
+
+.expected-delivery strong {
+    margin-left: 5px;
+}
+
+
+
+@media (max-width: 600px) {
+
+    .order-tracking {
+        padding: 15px;
+    }
+
+    .tracking-info strong {
+        font-size: 15px;
+    }
+
+    .tracking-info span {
+        font-size: 12px;
+    }
+
+    .tracking-step {
+        min-height: 65px;
+    }
+}
+
+
+
+
+/* =========================
+   ORDERED PRODUCT
+========================= */
+
+.ordered-product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.ordered-product:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.ordered-product-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #f7f7f7;
+    flex-shrink: 0;
+}
+
+.ordered-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ordered-product-info strong {
+    font-size: 16px;
+    color: #222;
+}
+
+.ordered-product-info span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #2874f0;
+}
+
+.ordered-product-info small {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .ordered-product {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .ordered-product-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .ordered-product-info strong {
+        font-size: 14px;
+    }
+
+    .ordered-product-info span {
+        font-size: 14px;
+    }
+
+}

@@ -57,7 +57,21 @@
 
 
 <hr>
+<div class="product-actions">
 
+    <div class="wishlist-button">
+        <a href="{% url 'add_to_wishlist' product.id %}">
+            ❤️ Add to Wishlist
+        </a>
+    </div>
+
+    <div class="share-button">
+        <button onclick="shareProduct()">
+            📤 Share
+        </button>
+    </div>
+
+</div>
 <div class="product-info">
 
     <h1>{{ product.name }}</h1>
@@ -67,6 +81,95 @@
     <p><b>Category:</b> {{ product.category }}</p>
 
     <p>{{ product.description }}</p>
+
+<div class="review-section">
+
+    <h2>⭐ Customer Rating & Review</h2>
+
+    {% if user.is_authenticated %}
+
+        <form method="POST" action="{% url 'add_review' product.id %}">
+            {% csrf_token %}
+
+            <label for="rating">Your Rating:</label>
+
+            <select name="rating" id="rating" required>
+                <option value="">Select Rating</option>
+                <option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+                <option value="4">⭐⭐⭐⭐ 4 Stars</option>
+                <option value="3">⭐⭐⭐ 3 Stars</option>
+                <option value="2">⭐⭐ 2 Stars</option>
+                <option value="1">⭐ 1 Star</option>
+            </select>
+
+            <textarea
+                name="comment"
+                placeholder="Write your review..."
+                rows="4"></textarea>
+
+            <button type="submit">
+                Submit Review
+            </button>
+
+        </form>
+
+    {% else %}
+
+        <p>
+            Please
+            <a href="{% url 'account_login' %}">
+                Login
+            </a>
+            to give a rating and review.
+        </p>
+
+    {% endif %}
+
+
+    <hr>
+
+    <h3>Customer Reviews</h3>
+
+    {% for review in product.reviews.all %}
+
+        <div class="customer-review">
+
+            <strong>{{ review.user.username }}</strong>
+
+            <div>
+                {% if review.rating == 5 %}
+                    ⭐⭐⭐⭐⭐
+                {% elif review.rating == 4 %}
+                    ⭐⭐⭐⭐
+                {% elif review.rating == 3 %}
+                    ⭐⭐⭐
+                {% elif review.rating == 2 %}
+                    ⭐⭐
+                {% else %}
+                    ⭐
+                {% endif %}
+            </div>
+
+            {% if review.comment %}
+                <p>{{ review.comment }}</p>
+            {% endif %}
+
+            <small>
+                {{ review.created|date:"d M Y" }}
+            </small>
+
+        </div>
+
+    {% empty %}
+
+        <p>
+            No reviews yet. Be the first to review this product! ⭐
+        </p>
+
+    {% endfor %}
+
+</div>
+    
 
     <div class="product-buttons">
 
@@ -92,6 +195,61 @@
 
 </div>
 
+
+
+
+<!-- =========================
+     SIMILAR PRODUCTS
+========================= -->
+
+<div class="similar-products-section">
+
+    <h2>🛍️ Similar Products</h2>
+
+    <div class="similar-products">
+
+        {% for item in similar_products %}
+
+            <div class="similar-product-card">
+
+    <a href="{% url 'product_detail' item.id %}">
+
+        {% if item.image %}
+            <img src="{{ item.image.url }}"
+                 alt="{{ item.name }}">
+        {% endif %}
+
+        <h3>{{ item.name }}</h3>
+
+        <p>₹{{ item.price }}</p>
+
+    </a>
+
+    <div class="similar-rating">
+    {% if item.average_rating %}
+        ⭐ {{ item.average_rating|floatformat:1 }}
+    {% else %}
+        ⭐ No rating
+    {% endif %}
+</div>
+
+    <a href="{% url 'add_to_cart' item.id %}"
+       class="similar-cart-btn">
+        🛒 Add to Cart
+    </a>
+
+</div>
+
+        {% empty %}
+
+            <p>No similar products available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
 <nav class="bottom-nav">
 
     <button onclick="location.href='/'">🏠 Home</button>
@@ -107,7 +265,41 @@
 
 
 <script>
+
+/* =========================================
+   RECENTLY VIEWED PRODUCTS
+========================================= */
+
+const productId = "{{ product.id }}";
+
+let recentlyViewed =
+    JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+
+// Agar product pehle se recently viewed mein hai,
+// to usko pehle remove kar do
+recentlyViewed = recentlyViewed.filter(
+    id => id !== productId
+);
+
+// Ab current product ko sabse upar add karo
+recentlyViewed.unshift(productId);
+
+// Sirf last 10 products rakho
+recentlyViewed = recentlyViewed.slice(0, 10);
+
+// Browser localStorage mein save karo
+localStorage.setItem(
+    "recentlyViewed",
+    JSON.stringify(recentlyViewed)
+);
+
+
+/* =========================================
+   PRODUCT IMAGE GALLERY
+========================================= */
+
 const productImages = [
+
     {% if product.image %}
         "{{ product.image.url }}",
     {% endif %}
@@ -115,9 +307,15 @@ const productImages = [
     {% for image in product.images.all %}
         "{{ image.image.url }}",
     {% endfor %}
+
 ];
 
 let currentImageIndex = 0;
+
+
+/* =========================================
+   SHOW PRODUCT IMAGE
+========================================= */
 
 function showProductImage(index) {
 
@@ -130,17 +328,33 @@ function showProductImage(index) {
     document.getElementById("mainProductImage").src =
         productImages[currentImageIndex];
 
-    document.querySelectorAll(".thumbnail").forEach(function (thumb, i) {
-        thumb.classList.toggle(
-            "active",
-            i === currentImageIndex
-        );
-    });
+    document.querySelectorAll(".thumbnail").forEach(
+        function (thumb, i) {
+
+            thumb.classList.toggle(
+                "active",
+                i === currentImageIndex
+            );
+
+        }
+    );
 }
 
+
+/* =========================================
+   SELECT IMAGE
+========================================= */
+
 function selectImage(index) {
+
     showProductImage(index);
+
 }
+
+
+/* =========================================
+   NEXT IMAGE
+========================================= */
 
 function nextImage() {
 
@@ -149,10 +363,17 @@ function nextImage() {
     }
 
     currentImageIndex =
-        (currentImageIndex + 1) % productImages.length;
+        (currentImageIndex + 1) %
+        productImages.length;
 
     showProductImage(currentImageIndex);
+
 }
+
+
+/* =========================================
+   PREVIOUS IMAGE
+========================================= */
 
 function previousImage() {
 
@@ -161,43 +382,120 @@ function previousImage() {
     }
 
     currentImageIndex =
-        (currentImageIndex - 1 + productImages.length)
-        % productImages.length;
+        (currentImageIndex - 1 + productImages.length) %
+        productImages.length;
 
     showProductImage(currentImageIndex);
+
 }
 
 
+/* =========================================
+   MOBILE IMAGE SWIPE
+========================================= */
 
 let touchStartX = 0;
 let touchEndX = 0;
 
-const mainProductImage = document.getElementById("mainProductImage");
+const mainProductImage =
+    document.getElementById("mainProductImage");
 
-mainProductImage.addEventListener("touchstart", function (event) {
-    touchStartX = event.changedTouches[0].screenX;
-});
+if (mainProductImage) {
 
-mainProductImage.addEventListener("touchend", function (event) {
-    touchEndX = event.changedTouches[0].screenX;
+    mainProductImage.addEventListener(
+        "touchstart",
+        function (event) {
 
-    handleSwipe();
-});
+            touchStartX =
+                event.changedTouches[0].screenX;
+
+        }
+    );
+
+
+    mainProductImage.addEventListener(
+        "touchend",
+        function (event) {
+
+            touchEndX =
+                event.changedTouches[0].screenX;
+
+            handleSwipe();
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   HANDLE SWIPE
+========================================= */
 
 function handleSwipe() {
 
-    const swipeDistance = touchEndX - touchStartX;
+    const swipeDistance =
+        touchEndX - touchStartX;
+
 
     // Swipe left → Next image
+
     if (swipeDistance < -50) {
+
         nextImage();
+
     }
 
+
     // Swipe right → Previous image
+
     if (swipeDistance > 50) {
+
         previousImage();
+
     }
+
 }
+
+
+/* =========================================
+   SHARE PRODUCT
+========================================= */
+
+function shareProduct() {
+
+    const productName =
+        "{{ product.name|escapejs }}";
+
+    const productUrl =
+        window.location.href;
+
+
+    if (navigator.share) {
+
+        navigator.share({
+
+            title: productName,
+
+            text:
+                "Check out this product on ElectroHub!",
+
+            url: productUrl
+
+        });
+
+    }
+
+    else {
+
+        navigator.clipboard.writeText(productUrl);
+
+        alert("Product link copied!");
+
+    }
+
+}
+
 </script>
 
 {% endblock %}

@@ -1,7 +1,23 @@
 from django.shortcuts import render
 
 def account_home(request):
-    return render(request, 'accounts/account_home.html')
+
+    from shop.models import Wishlist
+
+    wishlist_items = []
+
+    if request.user.is_authenticated:
+        wishlist_items = Wishlist.objects.filter(
+            user=request.user
+        ).select_related('product')
+
+    return render(
+        request,
+        'accounts/account_home.html',
+        {
+            'wishlist_items': wishlist_items
+        }
+    )
 def login_view(request):
     return render(request, 'accounts/login.html')
 def signup_view(request):
@@ -180,3 +196,10 @@ def change_password(request):
         return redirect("account_login")
 
     return render(request, "accounts/change_password.html")
+
+
+def help_center(request):
+    return render(
+        request,
+        'accounts/help_center.html'
+    )

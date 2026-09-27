@@ -45,7 +45,39 @@ urlpatterns = [
          name='orders'),
 
 
-    path('order-success/', views.order_success, name='order_success'),    
+    path('order-success/', views.order_success, name='order_success'), 
+
+
+    path(
+    'wishlist/add/<int:product_id>/',
+    views.add_to_wishlist,
+    name='add_to_wishlist'),   
+
+
+    path(
+    'product/<int:product_id>/review/',
+    views.add_review,
+    name='add_review'),
+
+
+    path(
+    'replacement/<int:order_id>/',
+    views.request_replacement,
+    name='request_replacement'),
+
+
+    path(
+    'search-suggestions/',
+    views.search_suggestions,
+    name='search_suggestions'),
+
+
+    path(
+    'recently-viewed/',
+    views.recently_viewed_products,
+    name='recently_viewed_products'),
 ]
+
+
 
 

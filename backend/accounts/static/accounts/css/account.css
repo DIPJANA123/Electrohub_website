@@ -111,3 +111,378 @@ body{
     color:white;
     transform:translateY(-4px);
 }
+
+
+/* =========================
+   WISHLIST
+========================= */
+
+.wishlist-section {
+    margin: 25px 0;
+}
+
+.wishlist-section h2 {
+    margin-bottom: 20px;
+}
+
+.wishlist-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.wishlist-card {
+    width: 180px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.wishlist-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.wishlist-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.wishlist-card p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2874f0;
+}
+
+.wishlist-card a {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #2874f0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.empty-wishlist {
+    color: #777;
+    font-size: 16px;
+}
+
+
+/* =========================
+   HELP CENTER
+========================= */
+
+.help-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.help-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.help-container > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.help-box {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.help-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.help-box h3 {
+    margin: 0 0 8px;
+    color: #2874f0;
+}
+
+.help-box p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+
+    .help-container {
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .help-container h1 {
+        font-size: 24px;
+    }
+
+    .help-box {
+        padding: 16px;
+    }
+
+    .help-box h3 {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================
+   HELP CENTER
+========================= */
+
+.help-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.help-container h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.help-container > p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+
+/* Help Box */
+
+.help-box {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.help-box:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Question */
+
+.help-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.help-question:hover {
+    background: #f8faff;
+}
+
+.help-question h3 {
+    margin: 0;
+    font-size: 17px;
+    color: #222;
+}
+
+.help-question span {
+    font-size: 14px;
+    color: #2874f0;
+}
+
+
+/* Answer */
+
+.help-answer {
+    display: none;
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #eeeeee;
+    color: #555;
+    line-height: 1.7;
+}
+
+.help-answer p {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.help-answer ol,
+.help-answer ul {
+    margin-top: 8px;
+    padding-left: 25px;
+}
+
+.help-answer li {
+    margin-bottom: 8px;
+}
+
+.help-answer strong {
+    color: #222;
+}
+
+.help-answer hr {
+    border: 0;
+    border-top: 1px solid #eeeeee;
+    margin: 20px 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .help-container {
+        margin: 15px auto;
+        padding: 12px;
+    }
+
+    .help-container h1 {
+        font-size: 25px;
+    }
+
+    .help-container > p {
+        font-size: 14px;
+    }
+
+    .help-question {
+        padding: 15px;
+    }
+
+    .help-question h3 {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .help-answer {
+        padding: 0 15px 15px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================
+   RECENTLY VIEWED PRODUCTS
+========================= */
+
+.recently-viewed-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.recently-viewed-section h2 {
+    margin-bottom: 18px;
+    font-size: 22px;
+    color: #222;
+}
+
+.recently-viewed-products {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.recently-viewed-card {
+    flex: 0 0 170px;
+    width: 170px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.recently-viewed-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    transform: translateY(-2px);
+}
+
+.recently-viewed-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.recently-viewed-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    display: block;
+    background: #f8f8f8;
+}
+
+.recently-viewed-card h3 {
+    font-size: 14px;
+    margin: 10px;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.recently-viewed-card p {
+    margin: 0 10px 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* No image */
+
+.no-product-image {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    color: #999;
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .recently-viewed-section {
+        padding: 15px;
+    }
+
+    .recently-viewed-section h2 {
+        font-size: 20px;
+    }
+
+    .recently-viewed-card {
+        flex: 0 0 145px;
+        width: 145px;
+    }
+
+    .recently-viewed-card img,
+    .no-product-image {
+        height: 115px;
+    }
+
+}

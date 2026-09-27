@@ -1,0 +1,133 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Request Replacement
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.replacement-container {
+    width: 90%;
+    max-width: 650px;
+    margin: 40px auto 100px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.replacement-container h1 {
+    margin-bottom: 20px;
+}
+
+.order-info {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.replacement-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+.replacement-form select,
+.replacement-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.replacement-form textarea {
+    resize: vertical;
+}
+
+.replacement-submit {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #ff9800;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.replacement-submit:hover {
+    background: #e68900;
+}
+
+.cancel-btn {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    padding: 12px;
+    background: #eee;
+    color: #333;
+    text-decoration: none;
+    border-radius: 7px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="replacement-container">
+
+    <h1>🔄 Request Replacement</h1>
+
+    <div class="order-info">
+        <p><strong>Order:</strong> #{{ order.id }}</p>
+        <p><strong>Product:</strong> {{ order.product.name }}</p>
+        <p><strong>Amount:</strong> ₹{{ order.total }}</p>
+    </div>
+
+    <form method="POST" class="replacement-form">
+
+        {% csrf_token %}
+
+        <label for="reason">
+            Replacement Reason
+        </label>
+
+        <select name="reason" id="reason" required>
+            <option value="">Select a reason</option>
+            <option value="Damaged Product">Damaged Product</option>
+            <option value="Wrong Product">Wrong Product</option>
+            <option value="Defective Product">Defective Product</option>
+            <option value="Missing Parts">Missing Parts</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="description">
+            Additional Details
+        </label>
+
+        <textarea
+            name="description"
+            id="description"
+            rows="5"
+            placeholder="Please explain the problem..."
+        ></textarea>
+
+        <button type="submit" class="replacement-submit">
+            Submit Replacement Request
+        </button>
+
+    </form>
+
+    <a href="{% url 'orders' %}" class="cancel-btn">
+        ← Back to My Orders
+    </a>
+
+</div>
+
+{% endblock %}

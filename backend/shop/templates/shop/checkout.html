@@ -39,4 +39,17 @@ Checkout
 </form>
 </div>
 
+
+<nav class="bottom-nav">
+
+    <button onclick="location.href='/'">🏠 Home</button>
+
+    <button onclick="location.href='{% url 'account_home' %}'">👤 Account</button>
+
+    <button onclick="location.href='{% url 'cart' %}'">🛒 Cart</button>
+
+    <button onclick="location.href='{% url 'orders' %}'">📦 Orders</button>
+
+</nav>
+
 {% endblock %}

@@ -25,9 +25,9 @@ My Account
         <span>My Orders</span>
     </a>
 
-    <a href="#" class="box">
-        ❤️
-        <span>Wishlist</span>
+    <a href="javascript:void(0);" class="box" onclick="showWishlist()">
+    ❤️
+    <span>Wishlist</span>
     </a>
 
     <a href="#" class="box">
@@ -35,7 +35,71 @@ My Account
         <span>Feedback</span>
     </a>
 
+
+    <a href="{% url 'help_center' %}" class="box">
+    🆘
+    <span>Help Center</span>
+    </a>
+
+
+
 </div>
+<div class="wishlist-section" id="wishlist" style="display: none;">
+
+    <h2>❤️ My Wishlist</h2>
+
+    {% if wishlist_items %}
+
+        <div class="wishlist-products">
+
+            {% for item in wishlist_items %}
+
+                <div class="wishlist-card">
+
+                    {% if item.product.image %}
+                        <img src="{{ item.product.image.url }}"
+                             alt="{{ item.product.name }}">
+                    {% endif %}
+
+                    <h3>{{ item.product.name }}</h3>
+
+                    <p>₹{{ item.product.price }}</p>
+
+                    <a href="{% url 'product_detail' item.product.id %}">
+                        View Product
+                    </a>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <p class="empty-wishlist">
+            Your wishlist is empty ❤️
+        </p>
+
+    {% endif %}
+
+</div>
+
+<!-- =========================
+     RECENTLY VIEWED PRODUCTS
+========================= -->
+
+<section class="recently-viewed-section" id="recentlyViewedSection">
+
+    <h2>👀 Recently Viewed</h2>
+
+    <div class="recently-viewed-products" id="recentlyViewedProducts">
+        <!-- Products JavaScript se yahan aayenge -->
+    </div>
+
+</section>
+
+
 <hr>
 
 <div class="account-menu">
@@ -78,5 +142,106 @@ My Account
 </div>
 </a>
 </div>
+
+
+<script>
+function showWishlist() {
+    const wishlist = document.getElementById("wishlist");
+
+    if (wishlist.style.display === "none") {
+        wishlist.style.display = "block";
+    } else {
+        wishlist.style.display = "none";
+    }
+}
+</script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const productContainer =
+        document.getElementById("recentlyViewedProducts");
+
+    const recentlyViewedSection =
+        document.getElementById("recentlyViewedSection");
+
+    if (!productContainer || !recentlyViewedSection) {
+        return;
+    }
+
+    // Browser se recently viewed product IDs nikalo
+    const recentlyViewed =
+        JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+
+    // Agar koi product nahi dekha gaya
+    if (recentlyViewed.length === 0) {
+        recentlyViewedSection.style.display = "none";
+        return;
+    }
+
+    // Product IDs ko API ke through backend bhejo
+    fetch(
+        `/recently-viewed/?ids=${recentlyViewed.join(",")}`
+    )
+    .then(response => response.json())
+    .then(products => {
+
+        productContainer.innerHTML = "";
+
+        if (products.length === 0) {
+            recentlyViewedSection.style.display = "none";
+            return;
+        }
+
+        products.forEach(product => {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "recently-viewed-card";
+
+            card.innerHTML = `
+
+                <a href="/product/${product.id}/">
+
+                    ${
+                        product.image
+                        ? `<img
+                            src="${product.image}"
+                            alt="${product.name}">
+                           `
+                        : `<div class="no-product-image">
+                            No Image
+                           </div>`
+                    }
+
+                    <h3>${product.name}</h3>
+
+                    <p>₹${product.price}</p>
+
+                </a>
+
+            `;
+
+            productContainer.appendChild(card);
+
+        });
+
+    })
+    .catch(error => {
+
+        console.error(
+            "Recently viewed error:",
+            error
+        );
+
+    });
+
+});
+
+</script>
 
 {% endblock %}

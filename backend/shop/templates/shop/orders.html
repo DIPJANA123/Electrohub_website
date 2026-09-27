@@ -22,6 +22,27 @@ My Orders
         <div class="order-card">
 
             <h3>Order #{{ order.id }}</h3>
+            {% if order.product %}
+
+                 <a href="{% url 'product_detail' order.product.id %}"
+                class="ordered-product">
+
+                {% if order.product.image %}
+                <img
+                   src="{{ order.product.image.url }}"
+                   alt="{{ order.product.name }}"
+                   class="ordered-product-image">
+            {% endif %}
+
+        <div class="ordered-product-info">
+            <strong>{{ order.product.name }}</strong>
+            <span>₹{{ order.product.price }}</span>
+            <small>View Product →</small>
+            </div>
+
+                </a>
+
+            {% endif %}
 
             <p>Total: ₹{{ order.total }}</p>
 
@@ -29,27 +50,97 @@ My Orders
 
             <p>Phone: {{ order.phone }}</p>
 
-            <p>Date: {{ order.created_at }}</p>
-            <p>
-    <b>Status:</b>
+            <p>Date: {{ order.created|date:"d M Y, h:i A" }}</p>
+            <div class="order-tracking">
 
-    {% if order.status == "Pending" %}
-        <span class="status pending">Pending</span>
+    <!-- Order Placed -->
+    <div class="tracking-step active">
+        <div class="tracking-dot">✓</div>
 
-    {% elif order.status == "Confirmed" %}
-        <span class="status confirmed">Confirmed</span>
+        <div class="tracking-info">
+            <strong>Order Placed</strong>
 
-    {% elif order.status == "Shipped" %}
-        <span class="status shipped">Shipped</span>
+            {% if order.created %}
+                <span>{{ order.created|date:"d M Y, h:i A" }}</span>
+            {% endif %}
+        </div>
+    </div>
 
-    {% elif order.status == "Delivered" %}
-        <span class="status delivered">Delivered</span>
 
-    {% else %}
-        <span class="status cancelled">Cancelled</span>
+    <!-- Confirmed -->
+    <div class="tracking-step {% if order.confirmed_at %}active{% endif %}">
+        <div class="tracking-dot">
+            {% if order.confirmed_at %}✓{% endif %}
+        </div>
 
-    {% endif %}
-</p>
+        <div class="tracking-info">
+            <strong>Confirmed</strong>
+
+            {% if order.confirmed_at %}
+                <span>{{ order.confirmed_at|date:"d M Y, h:i A" }}</span>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <!-- Shipped -->
+    <div class="tracking-step {% if order.shipped_at %}active{% endif %}">
+        <div class="tracking-dot">
+            {% if order.shipped_at %}✓{% endif %}
+        </div>
+
+        <div class="tracking-info">
+            <strong>Shipped</strong>
+
+            {% if order.shipped_at %}
+                <span>{{ order.shipped_at|date:"d M Y, h:i A" }}</span>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <!-- Out for Delivery -->
+    <div class="tracking-step {% if order.out_for_delivery_at %}active{% endif %}">
+        <div class="tracking-dot">
+            {% if order.out_for_delivery_at %}✓{% endif %}
+        </div>
+
+        <div class="tracking-info">
+            <strong>Out for Delivery</strong>
+
+            {% if order.out_for_delivery_at %}
+                <span>{{ order.out_for_delivery_at|date:"d M Y, h:i A" }}</span>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <!-- Delivered -->
+    <div class="tracking-step {% if order.delivered_at %}active{% endif %}">
+        <div class="tracking-dot">
+            {% if order.delivered_at %}✓{% endif %}
+        </div>
+
+        <div class="tracking-info">
+            <strong>Delivered</strong>
+
+            {% if order.delivered_at %}
+                <span>{{ order.delivered_at|date:"d M Y, h:i A" }}</span>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+{% if order.expected_delivery_date and order.status != "Delivered" %}
+    <div class="expected-delivery">
+        🚚 Expected Delivery:
+        <strong>
+            {{ order.expected_delivery_date|date:"d M Y" }}
+        </strong>
+    </div>
+{% endif %}
 
         </div>
 
