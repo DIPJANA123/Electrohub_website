@@ -1,0 +1,1659 @@
+[
+{
+  "model": "shop.category",
+  "pk": 14,
+  "fields": {
+    "name": "Ceiling Fan"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 15,
+  "fields": {
+    "name": "Tube Light"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 16,
+  "fields": {
+    "name": "LED"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 17,
+  "fields": {
+    "name": "Wire"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 18,
+  "fields": {
+    "name": "Motor"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 19,
+  "fields": {
+    "name": "computer"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 20,
+  "fields": {
+    "name": "tv"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 21,
+  "fields": {
+    "name": "LED Light"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 22,
+  "fields": {
+    "name": "Emergency Light"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 23,
+  "fields": {
+    "name": "Fan"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 24,
+  "fields": {
+    "name": "Exhaust Fan"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 25,
+  "fields": {
+    "name": "Switch"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 26,
+  "fields": {
+    "name": "Socket"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 27,
+  "fields": {
+    "name": "Switch & Socket"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 28,
+  "fields": {
+    "name": "Plug"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 29,
+  "fields": {
+    "name": "Extension Board"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 30,
+  "fields": {
+    "name": "MCB"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 31,
+  "fields": {
+    "name": "Distribution Board"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 32,
+  "fields": {
+    "name": "Wire & Cable"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 33,
+  "fields": {
+    "name": "Cable"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 34,
+  "fields": {
+    "name": "Network Cable"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 35,
+  "fields": {
+    "name": "Electrical Accessories"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 36,
+  "fields": {
+    "name": "Modular Accessories"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 37,
+  "fields": {
+    "name": "Doorbell"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 38,
+  "fields": {
+    "name": "Electrical Tools"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 39,
+  "fields": {
+    "name": "Night Light"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 40,
+  "fields": {
+    "name": "Smart Lighting"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 41,
+  "fields": {
+    "name": "LED Strip"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 42,
+  "fields": {
+    "name": "Stabilizer"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "category": 14,
+    "seller": null,
+    "name": "barsha",
+    "price": 2000,
+    "description": "good product",
+    "image": "products/Screenshot_2026-01-18_151247.png",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 3,
+  "fields": {
+    "category": null,
+    "seller": null,
+    "name": "sony hometheater",
+    "price": 10000,
+    "description": "best quality homethater , loud sound ,, 1.5 homethater ,, quality spekar ,, high bass ,,",
+    "image": "products/310907_0_kvdqlx.webp",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 5,
+  "fields": {
+    "category": 14,
+    "seller": null,
+    "name": "compton fan",
+    "price": 3000,
+    "description": "good product",
+    "image": "products/images_gwccwWq.jpg",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 6,
+  "fields": {
+    "category": 15,
+    "seller": null,
+    "name": "lg tube light",
+    "price": 120,
+    "description": "bright light quality",
+    "image": "products/PhilipsSlimlineSuperBrightLEDTubelight_xGLZFi0.webp",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 7,
+  "fields": {
+    "category": 16,
+    "seller": null,
+    "name": "par light",
+    "price": 2000,
+    "description": "multicolour light",
+    "image": "products/Betopper_18x18W_RGBW_Amber_UV_6-IN-1_LED_Par_Light_0_1024x1024_R9qivB4.webp",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 8,
+  "fields": {
+    "category": 17,
+    "seller": null,
+    "name": "3mm wire",
+    "price": 500,
+    "description": "copper wire",
+    "image": "products/tricom-red-black-twisted-wire-50-12-1-kathiriyas-1-original-imagxjs7scz7x9zz.webp",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 9,
+  "fields": {
+    "category": 18,
+    "seller": null,
+    "name": "pump motor",
+    "price": 5000,
+    "description": "good product motor",
+    "image": "products/images_1.jpg",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 13,
+  "fields": {
+    "category": null,
+    "seller": null,
+    "name": "Bajaj mixer grinder",
+    "price": 1700,
+    "description": "Supported Functions\r\nGrinding, Chutney making, Liquidizing\r\nPerformance\r\nHeavy Duty Grinding\r\nIncluded Accessories\r\nWarranty Card, Instruction Manual\r\nAttachment Type\r\nMulti-function Blades\r\nJar Capacity\r\n1.2 L (Liquidizing Jar)\r\nIncluded Items\r\nWarranty Card (1N), Chutney Jar (1N), Chutney Lid (1N), Grinding Jar (1N), Grinding Lid (1N)\r\nNumber of Speeds\r\n3\r\nSpeed Settings\r\nAdjustable Speed Control, 3 speed control with incher for momentary operation\r\nVariable Speed\r\nYes\r\nControls Type\r\nKnob Control\r\nPulse Function\r\nYes\r\nAppliance Type\r\nMixer Grinder\r\nDimensions\r\n22D x 23W x 42H Centimeters\r\nMaterial\r\nStainless steel\r\nWeight\r\n3.85 kg\r\nStyle\r\nGX1\r\nWattage\r\n500 W\r\nPower Source\r\nElectric\r\nVoltage\r\n220-240V\r\nWarranty\r\n2 Years (Product)\r\nConstruction Material\r\nStainless steel\r\nJar Material\r\nStainless Steel\r\nHousing Material\r\nPlastic\r\nBlade Material\r\nStainless Steel\r\nBlade Type\r\n2-in-1 function blade (in dry jar)\r\nBlade Count\r\n3\r\nCordless\r\nNo\r\nHeight\r\n42 Centimeters\r\nLength\r\n22 Centimeters\r\nWidth\r\n19 cm\r\nHighlighted Features\r\nMotor overload protector, Manual\r\nHome Use\r\nYes\r\nTop Use Cases\r\nGrinding\r\nSpecific Food Preparations\r\nChutney, Dry grinding\r\nVessel Type\r\nJar\r\nPower Output\r\n500 W\r\nMotor Speed\r\n20000 Revolution\r\nMotor Type\r\nTitan Motor\r\nDishwasher Safe Parts\r\nNo\r\nEasy To Clean\r\nYes\r\nSafety Lock\r\nYes\r\nAuto Shut Off\r\nYes\r\nSafety Features\r\nMotor overload protector",
+    "image": "products/shopping.webp",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 14,
+  "fields": {
+    "category": null,
+    "seller": null,
+    "name": "samsung refrigerator",
+    "price": 26000,
+    "description": "",
+    "image": "products/in-energylabel-product-rt40h28w2prhl-553537691.avif",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 16,
+  "fields": {
+    "category": 20,
+    "seller": null,
+    "name": "samsung",
+    "price": 15000,
+    "description": "samsung 42 inch led tv",
+    "image": "products/Samsung-42-Inch-LED-TV.jpg",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 17,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Bulb 5W",
+    "price": 49,
+    "description": "Energy efficient LED bulb for home lighting",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 18,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Bulb 7W",
+    "price": 59,
+    "description": "Compact LED bulb for rooms and general lighting",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 19,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Bulb 9W",
+    "price": 79,
+    "description": "Bright energy saving LED bulb for everyday use",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 20,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Bulb 12W",
+    "price": 99,
+    "description": "High brightness LED bulb for home and office",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 21,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Bulb 15W",
+    "price": 129,
+    "description": "Powerful LED bulb for larger rooms",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 22,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Bulb 20W",
+    "price": 169,
+    "description": "High wattage LED bulb for bright illumination",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 23,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Bulb 24W",
+    "price": 199,
+    "description": "High brightness bulb for large indoor spaces",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 24,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Tube Light 20W",
+    "price": 199,
+    "description": "Energy efficient tube light for home and office",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 25,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Tube Light 22W",
+    "price": 229,
+    "description": "Bright LED tube light for indoor lighting",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 26,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Tube Light 40W",
+    "price": 399,
+    "description": "Long tube light for larger spaces",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 27,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Panel Light 6W",
+    "price": 149,
+    "description": "Compact panel light for ceiling installation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 28,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Panel Light 12W",
+    "price": 199,
+    "description": "Slim panel light for home and office ceilings",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 29,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Panel Light 18W",
+    "price": 249,
+    "description": "Bright ceiling panel for indoor areas",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 30,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Panel Light 24W",
+    "price": 299,
+    "description": "High brightness panel light for large rooms",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 31,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Downlight 7W",
+    "price": 149,
+    "description": "Recessed LED downlight for modern interiors",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 32,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Downlight 12W",
+    "price": 199,
+    "description": "Ceiling downlight for focused indoor illumination",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 33,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Spot Light 7W",
+    "price": 179,
+    "description": "Compact spotlight for decorative lighting",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 34,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Flood Light 30W",
+    "price": 499,
+    "description": "Outdoor LED flood light for general illumination",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 35,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Flood Light 50W",
+    "price": 699,
+    "description": "Bright flood light for outdoor areas",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 36,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Flood Light 100W",
+    "price": 1199,
+    "description": "High power flood light for large outdoor spaces",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 37,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Street Light 50W",
+    "price": 899,
+    "description": "LED street light for outdoor road illumination",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 38,
+  "fields": {
+    "category": 21,
+    "seller": null,
+    "name": "LED Street Light 100W",
+    "price": 1499,
+    "description": "High brightness street light for larger roads",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 39,
+  "fields": {
+    "category": 22,
+    "seller": null,
+    "name": "Emergency LED Light",
+    "price": 299,
+    "description": "Rechargeable emergency light for power cuts",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 40,
+  "fields": {
+    "category": 22,
+    "seller": null,
+    "name": "Rechargeable LED Lantern",
+    "price": 399,
+    "description": "Portable rechargeable lantern for emergency lighting",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 41,
+  "fields": {
+    "category": 23,
+    "seller": null,
+    "name": "Ceiling Fan 1200mm",
+    "price": 1699,
+    "description": "Standard ceiling fan for home and office use",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 42,
+  "fields": {
+    "category": 23,
+    "seller": null,
+    "name": "Ceiling Fan 1400mm",
+    "price": 1899,
+    "description": "Large sweep ceiling fan for spacious rooms",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 43,
+  "fields": {
+    "category": 23,
+    "seller": null,
+    "name": "BLDC Ceiling Fan",
+    "price": 2499,
+    "description": "Energy efficient BLDC ceiling fan",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 44,
+  "fields": {
+    "category": 23,
+    "seller": null,
+    "name": "High Speed Ceiling Fan",
+    "price": 1799,
+    "description": "High speed fan for strong air circulation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 45,
+  "fields": {
+    "category": 23,
+    "seller": null,
+    "name": "Table Fan",
+    "price": 999,
+    "description": "Compact fan for desks and tables",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 46,
+  "fields": {
+    "category": 23,
+    "seller": null,
+    "name": "Wall Fan",
+    "price": 1299,
+    "description": "Wall mounted fan for efficient air circulation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 47,
+  "fields": {
+    "category": 23,
+    "seller": null,
+    "name": "Pedestal Fan",
+    "price": 1799,
+    "description": "Portable standing fan for home and office",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 48,
+  "fields": {
+    "category": 24,
+    "seller": null,
+    "name": "Exhaust Fan 150mm",
+    "price": 899,
+    "description": "Compact exhaust fan for ventilation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 49,
+  "fields": {
+    "category": 24,
+    "seller": null,
+    "name": "Exhaust Fan 200mm",
+    "price": 999,
+    "description": "Medium size exhaust fan for kitchens and bathrooms",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 50,
+  "fields": {
+    "category": 24,
+    "seller": null,
+    "name": "Exhaust Fan 250mm",
+    "price": 1199,
+    "description": "Large exhaust fan for better ventilation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 51,
+  "fields": {
+    "category": 25,
+    "seller": null,
+    "name": "Modular Switch 6A",
+    "price": 59,
+    "description": "Modular switch for household electrical applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 52,
+  "fields": {
+    "category": 25,
+    "seller": null,
+    "name": "Modular Switch 16A",
+    "price": 79,
+    "description": "Heavy duty modular switch for high load appliances",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 53,
+  "fields": {
+    "category": 25,
+    "seller": null,
+    "name": "2 Way Modular Switch",
+    "price": 89,
+    "description": "Two way switch for controlling lights from two locations",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 54,
+  "fields": {
+    "category": 25,
+    "seller": null,
+    "name": "Bell Push Switch",
+    "price": 99,
+    "description": "Push switch for doorbell applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 55,
+  "fields": {
+    "category": 25,
+    "seller": null,
+    "name": "Fan Regulator",
+    "price": 149,
+    "description": "Regulator for controlling ceiling fan speed",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 56,
+  "fields": {
+    "category": 26,
+    "seller": null,
+    "name": "6A Socket",
+    "price": 69,
+    "description": "Standard socket for low power electrical devices",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 57,
+  "fields": {
+    "category": 26,
+    "seller": null,
+    "name": "16A Socket",
+    "price": 99,
+    "description": "High load socket for heavy electrical appliances",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 58,
+  "fields": {
+    "category": 26,
+    "seller": null,
+    "name": "Universal Socket",
+    "price": 149,
+    "description": "Multi standard socket for different plug types",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 59,
+  "fields": {
+    "category": 26,
+    "seller": null,
+    "name": "USB Charging Socket",
+    "price": 299,
+    "description": "Wall socket with USB charging support",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 60,
+  "fields": {
+    "category": 27,
+    "seller": null,
+    "name": "6A Switch Socket Combo",
+    "price": 129,
+    "description": "Combined switch and socket for home wiring",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 61,
+  "fields": {
+    "category": 27,
+    "seller": null,
+    "name": "16A Switch Socket Combo",
+    "price": 169,
+    "description": "High load switch and socket combination",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 62,
+  "fields": {
+    "category": 28,
+    "seller": null,
+    "name": "3 Pin Plug 6A",
+    "price": 49,
+    "description": "Standard three pin plug for electrical appliances",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 63,
+  "fields": {
+    "category": 28,
+    "seller": null,
+    "name": "3 Pin Plug 16A",
+    "price": 79,
+    "description": "Heavy duty three pin plug for high load appliances",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 64,
+  "fields": {
+    "category": 28,
+    "seller": null,
+    "name": "2 Pin Plug",
+    "price": 39,
+    "description": "Compact plug for compatible electrical devices",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 65,
+  "fields": {
+    "category": 29,
+    "seller": null,
+    "name": "Extension Board 4 Socket",
+    "price": 299,
+    "description": "Multi socket extension board for home appliances",
+    "image": "products/5119sglqFL._AC_UF10001000_QL80_.jpg",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 66,
+  "fields": {
+    "category": 29,
+    "seller": null,
+    "name": "Extension Board 6 Socket",
+    "price": 399,
+    "description": "Six socket extension board for multiple devices",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 67,
+  "fields": {
+    "category": 29,
+    "seller": null,
+    "name": "Spike Guard 4 Socket",
+    "price": 399,
+    "description": "Surge protection extension board for multiple devices",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 68,
+  "fields": {
+    "category": 29,
+    "seller": null,
+    "name": "Spike Guard 6 Socket",
+    "price": 499,
+    "description": "Multi socket spike guard for electronic devices",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 69,
+  "fields": {
+    "category": 29,
+    "seller": null,
+    "name": "Power Strip 4 Socket",
+    "price": 299,
+    "description": "Compact power strip for multiple connections",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 70,
+  "fields": {
+    "category": 29,
+    "seller": null,
+    "name": "Power Strip 6 Socket",
+    "price": 399,
+    "description": "Multi outlet power strip for home and office",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 71,
+  "fields": {
+    "category": 30,
+    "seller": null,
+    "name": "MCB Single Pole 6A",
+    "price": 99,
+    "description": "Circuit protection device for low load circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 72,
+  "fields": {
+    "category": 30,
+    "seller": null,
+    "name": "MCB Single Pole 16A",
+    "price": 109,
+    "description": "Circuit breaker for household electrical circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 73,
+  "fields": {
+    "category": 30,
+    "seller": null,
+    "name": "MCB Single Pole 20A",
+    "price": 119,
+    "description": "Protection device for medium load circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 74,
+  "fields": {
+    "category": 30,
+    "seller": null,
+    "name": "MCB Single Pole 32A",
+    "price": 129,
+    "description": "Circuit breaker for higher load applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 75,
+  "fields": {
+    "category": 30,
+    "seller": null,
+    "name": "MCB Double Pole 16A",
+    "price": 249,
+    "description": "Double pole circuit protection device",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 76,
+  "fields": {
+    "category": 30,
+    "seller": null,
+    "name": "MCB Double Pole 32A",
+    "price": 269,
+    "description": "Double pole breaker for higher load circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 77,
+  "fields": {
+    "category": 30,
+    "seller": null,
+    "name": "MCB Double Pole 63A",
+    "price": 399,
+    "description": "High capacity double pole circuit breaker",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 78,
+  "fields": {
+    "category": 31,
+    "seller": null,
+    "name": "Distribution Board 4 Way",
+    "price": 399,
+    "description": "Compact enclosure for electrical circuit distribution",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 79,
+  "fields": {
+    "category": 31,
+    "seller": null,
+    "name": "Distribution Board 8 Way",
+    "price": 599,
+    "description": "Distribution board for multiple electrical circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 80,
+  "fields": {
+    "category": 31,
+    "seller": null,
+    "name": "Distribution Board 12 Way",
+    "price": 799,
+    "description": "Larger distribution board for multiple circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 81,
+  "fields": {
+    "category": 32,
+    "seller": null,
+    "name": "PVC Copper Wire 1.5 sq mm",
+    "price": 1299,
+    "description": "Copper electrical wire for lighting circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 82,
+  "fields": {
+    "category": 32,
+    "seller": null,
+    "name": "PVC Copper Wire 2.5 sq mm",
+    "price": 1999,
+    "description": "Copper wire for general power circuits",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 83,
+  "fields": {
+    "category": 32,
+    "seller": null,
+    "name": "PVC Copper Wire 4 sq mm",
+    "price": 2999,
+    "description": "Heavy gauge copper wire for higher loads",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 84,
+  "fields": {
+    "category": 32,
+    "seller": null,
+    "name": "PVC Copper Wire 6 sq mm",
+    "price": 4199,
+    "description": "High capacity copper wire for electrical installations",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 85,
+  "fields": {
+    "category": 32,
+    "seller": null,
+    "name": "Flexible Wire 1 sq mm",
+    "price": 999,
+    "description": "Flexible electrical wire for suitable low load applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 86,
+  "fields": {
+    "category": 32,
+    "seller": null,
+    "name": "Flexible Wire 1.5 sq mm",
+    "price": 1299,
+    "description": "Flexible copper wire for electrical connections",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 87,
+  "fields": {
+    "category": 32,
+    "seller": null,
+    "name": "Flexible Wire 2.5 sq mm",
+    "price": 1999,
+    "description": "Flexible wire for suitable power applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 88,
+  "fields": {
+    "category": 33,
+    "seller": null,
+    "name": "Coaxial Cable",
+    "price": 499,
+    "description": "Cable for compatible television and signal applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 89,
+  "fields": {
+    "category": 34,
+    "seller": null,
+    "name": "LAN Cable Cat6",
+    "price": 699,
+    "description": "Ethernet cable for network connections",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 90,
+  "fields": {
+    "category": 34,
+    "seller": null,
+    "name": "LAN Cable Cat5e",
+    "price": 599,
+    "description": "Ethernet cable for standard networking",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 91,
+  "fields": {
+    "category": 33,
+    "seller": null,
+    "name": "HDMI Cable",
+    "price": 399,
+    "description": "Digital audio and video connection cable",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 92,
+  "fields": {
+    "category": 35,
+    "seller": null,
+    "name": "PVC Electrical Tape",
+    "price": 25,
+    "description": "Insulation tape for electrical wiring work",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 93,
+  "fields": {
+    "category": 35,
+    "seller": null,
+    "name": "Cable Tie Pack",
+    "price": 99,
+    "description": "Cable ties for organizing wires and cables",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 94,
+  "fields": {
+    "category": 35,
+    "seller": null,
+    "name": "Wire Connector",
+    "price": 99,
+    "description": "Connector for joining compatible electrical wires",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 95,
+  "fields": {
+    "category": 35,
+    "seller": null,
+    "name": "Cable Lug",
+    "price": 149,
+    "description": "Electrical lug for suitable cable termination",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 96,
+  "fields": {
+    "category": 35,
+    "seller": null,
+    "name": "Cable Gland",
+    "price": 79,
+    "description": "Cable entry accessory for suitable electrical installations",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 97,
+  "fields": {
+    "category": 36,
+    "seller": null,
+    "name": "Modular Plate 2 Module",
+    "price": 49,
+    "description": "Modular plate for electrical switch installation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 98,
+  "fields": {
+    "category": 36,
+    "seller": null,
+    "name": "Modular Plate 4 Module",
+    "price": 69,
+    "description": "Four module plate for switch and socket installation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 99,
+  "fields": {
+    "category": 36,
+    "seller": null,
+    "name": "Modular Plate 6 Module",
+    "price": 89,
+    "description": "Six module plate for modular electrical fittings",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 100,
+  "fields": {
+    "category": 36,
+    "seller": null,
+    "name": "Modular Plate 8 Module",
+    "price": 109,
+    "description": "Eight module plate for larger modular installations",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 101,
+  "fields": {
+    "category": 37,
+    "seller": null,
+    "name": "Digital Doorbell",
+    "price": 299,
+    "description": "Electronic doorbell for residential use",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 102,
+  "fields": {
+    "category": 37,
+    "seller": null,
+    "name": "Wireless Doorbell",
+    "price": 499,
+    "description": "Wireless doorbell system for home entrances",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 103,
+  "fields": {
+    "category": 37,
+    "seller": null,
+    "name": "Electric Buzzer",
+    "price": 149,
+    "description": "Compact buzzer for suitable alert applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 104,
+  "fields": {
+    "category": 38,
+    "seller": null,
+    "name": "Voltage Tester",
+    "price": 99,
+    "description": "Tester for checking electrical voltage",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 105,
+  "fields": {
+    "category": 38,
+    "seller": null,
+    "name": "Digital Multimeter",
+    "price": 399,
+    "description": "Measuring instrument for electrical testing",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 106,
+  "fields": {
+    "category": 38,
+    "seller": null,
+    "name": "Wire Stripper",
+    "price": 299,
+    "description": "Hand tool for stripping electrical wire insulation",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 107,
+  "fields": {
+    "category": 38,
+    "seller": null,
+    "name": "Combination Plier",
+    "price": 349,
+    "description": "General purpose hand tool for electrical work",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 108,
+  "fields": {
+    "category": 38,
+    "seller": null,
+    "name": "Insulated Screwdriver Set",
+    "price": 399,
+    "description": "Insulated screwdriver set for electrical maintenance",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 109,
+  "fields": {
+    "category": 39,
+    "seller": null,
+    "name": "LED Night Lamp",
+    "price": 129,
+    "description": "Compact LED lamp for night time illumination",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 110,
+  "fields": {
+    "category": 39,
+    "seller": null,
+    "name": "Plug-in Night Light",
+    "price": 149,
+    "description": "Plug-in light for bedrooms and corridors",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 111,
+  "fields": {
+    "category": 40,
+    "seller": null,
+    "name": "Smart LED Bulb",
+    "price": 399,
+    "description": "Connected LED bulb with smart lighting features",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 112,
+  "fields": {
+    "category": 41,
+    "seller": null,
+    "name": "LED Strip Light 5m",
+    "price": 399,
+    "description": "Flexible LED strip for decorative lighting",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 113,
+  "fields": {
+    "category": 41,
+    "seller": null,
+    "name": "LED Strip Light 10m",
+    "price": 699,
+    "description": "Long flexible LED strip for decorative applications",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 114,
+  "fields": {
+    "category": 41,
+    "seller": null,
+    "name": "LED Strip Controller",
+    "price": 299,
+    "description": "Controller for compatible LED strip lighting",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 115,
+  "fields": {
+    "category": 42,
+    "seller": null,
+    "name": "Automatic Voltage Stabilizer",
+    "price": 2499,
+    "description": "Voltage regulation device for compatible appliances",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 116,
+  "fields": {
+    "category": 42,
+    "seller": null,
+    "name": "Digital Voltage Stabilizer",
+    "price": 2999,
+    "description": "Digital stabilizer for compatible electrical appliances",
+    "image": "",
+    "is_approved": true
+  }
+},
+{
+  "model": "shop.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 7,
+    "image": "products/Betopper_18x18W_RGBW_Amber_UV_6-IN-1_LED_Par_Light_0_1024x1024.webp"
+  }
+},
+{
+  "model": "shop.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 7,
+    "image": "products/images_2.jpg"
+  }
+},
+{
+  "model": "shop.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 7,
+    "image": "products/71ENfqcJEcL.jpg"
+  }
+}
+]
